@@ -91,7 +91,7 @@ body {
 }
 
 .start-button {
-    background: linear-gradient(45deg, #0066ff, #00ffff);
+    background: linear-gradient(45deg, #0066ff, #238f5d);
     border: none;
     padding: 15px 40px;
     font-size: 24px;
@@ -120,7 +120,7 @@ body {
 }
 
 .config-button {
-    background: #0066ff;
+    background: #13634b;
     color: white;
     border: none;
     padding: 10px 25px;
@@ -130,7 +130,7 @@ body {
 }
 
 .config-button.selected {
-    background: #00ffff;
+    background: #279157;
 }
 
 /* Game Board Styles */
@@ -237,44 +237,74 @@ body {
 }
 
 .question-content {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: rgba(0, 103, 255, 0.9);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     max-width: 600px;
     width: 90%;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.question-value, .current-score {
+    font-size: 1.2em;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.question-text {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.question-text h3 {
     color: white;
-    box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
+    font-size: 1.4em;
+    margin: 0;
 }
 
 .answer-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 20px;
 }
 
 .answer-option {
-    background: rgba(0, 103, 255, 0.2);
-    padding: 15px;
-    border-radius: 10px;
+    background: rgba(0, 247, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
 }
 
 .answer-option:hover {
-    background: rgba(0, 103, 255, 0.4);
-    transform: translateX(10px);
+    background: rgba(0, 247, 255, 0.2);
+}
+
+.answer-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.answer-option label {
+    color: white;
+    cursor: pointer;
 }
 
 .submit-answer {
-    background: linear-gradient(45deg, #0066ff, #00ffff);
+    background: #00ffff;
+    color: #000;
     border: none;
-    padding: 15px;
-    color: white;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: transform 0.2s;
 }
 
@@ -307,7 +337,7 @@ body {
 }
 
 .config-button.selected {
-    background: #00ffff;
+    background: #0b6969;
 }
 
 /* Game Board Styles */
@@ -2501,7 +2531,7 @@ body {
 
 .question-card:hover {
     transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
+    background: rgba(80, 117, 59, 0.8);
 }
 
 /* Total Questions Counter */
@@ -2597,4 +2627,4 @@ body {
     background: rgba(0, 247, 255, 0.6);
     padding: 20px;
     text-align: center;
-    border-radius: 1
+    border-radius: 1}
