@@ -1,748 +1,106 @@
-// Pearl of Great Price category questions
-export const perlaQuestions = {
-  name: "Perla",
-  questionBank: [
-    {
-      value: 10,
-      question:
-        "¿Qué nombre le dio Dios a Adán en la traducción de Moisés que no aparece en la Biblia?",
-      answers: ["Mijael", "Gabriel", "Ahman", "Uriel"],
-      correct: 0, // "Mijael" (Moisés 1:34)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué ciudad fue elevada al cielo por su justicia según el Libro de Moisés?",
-      answers: ["Enoc", "Sión", "Jerusalén", "Sodoma"],
-      correct: 1, // "Sión" (Moisés 7:21)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué visión tuvo Adán que no se registra en el relato bíblico?",
-      answers: [
-        "La Caída de Lucifer",
-        "El bautismo de Jesús",
-        "La venida de Noé",
-        "La restauración del Evangelio",
-      ],
-      correct: 2, // Bautismo de Jesús (Moisés 6:64)
-    },
-    {
-      value: 10,
-      question:
-        "¿Quién es el ángel que enseña a Adán sobre el sacrificio de animales?",
-      answers: ["Miguel", "Rafael", "Moroni", "Gabriel"],
-      correct: 3, // "Gabriel" (Moisés 5:6)
-    },
-
-    {
-      value: 10,
-      question:
-        "¿Qué facción egipcia intentó sacrificar a Abraham según el Libro de Abraham?",
-      answers: [
-        "Sacerdotes de Elkenah",
-        "Guardias de Faraón",
-        "Mercenarios de Babilonia",
-        "Sacerdotes de On",
-      ],
-      correct: 0, // Sacerdotes de Elkenah (Abraham 1:7)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué planeta es descrito como el más cercano al trono de Dios en Abraham 3?",
-      answers: ["Kokob", "Shinehah", "Olea", "Kolob"],
-      correct: 1, // "Kolob" (Abraham 3:3)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué principio explica Abraham 4:18 sobre la creación que difiere del relato bíblico?",
-      answers: [
-        "Los días creativos fueron literales",
-        "Los elementos son inteligentes",
-        "Los ángeles ayudaron a crear",
-        "Adán fue creado último",
-      ],
-      correct: 2, // "Los elementos son inteligentes" (Abraham 4:18)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué título recibe Abraham en Egipto que refleja su conocimiento astronómico?",
-      answers: [
-        "Príncipe de Heliópolis",
-        "Sabio de Menfis",
-        "Sacerdote del Sol",
-        "Gobernador de Tebas",
-      ],
-      correct: 3, // "Príncipe de Heliópolis" (Abraham Facsímile 3)
-    },
-
-    {
-      value: 10,
-      question:
-        "Según José Smith-Mateo, ¿qué señal precede inmediatamente a la Segunda Venida?",
-      answers: [
-        "La predicación del Evangelio en todo el mundo",
-        "La aparición de los dos testigos",
-        "La gran tribulación de Jerusalén",
-        "El sol oscureciéndose",
-      ],
-      correct: 0, // Predicación mundial (JS-Mateo 1:31)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué personaje angelical NO apareció en la Primera Visión según José Smith-Historia?",
-      answers: ["Dios el Padre", "Jesucristo", "Moroni", "Miguel"],
-      correct: 1, // "Moroni" (apareció después, en 1823)
-    },
-    {
-      value: 10,
-      question:
-        "¿Qué edad tenía José Smith cuando recibió las planchas de oro?",
-      answers: ["20 años", "21 años", "22 años", "23 años"],
-      correct: 2, // 21 años (JS-Historia 1:59)
-    },
-    {
-      value: 10,
-      question:
-        "¿Quién fue el primer escriba de José Smith durante la traducción del Libro de Mormón?",
-      answers: [
-        "Oliver Cowdery",
-        "Martin Harris",
-        "Emma Smith",
-        "David Whitmer",
-      ],
-      correct: 3, // "Martin Harris" (JS-Historia 1:66)
-    },
-
-    // nivel 20
-
-    {
-      value: 20,
-      question:
-        "¿Qué título único recibe Enoc en Moisés 7:45 que no aparece en la Biblia?",
-      answers: [
-        "Vidente de los siglos",
-        "Escriba de justicia",
-        "Príncipe de paz",
-        "Mensajero del fin",
-      ],
-      correct: 1, // "Escriba de justicia" (Moisés 7:45)
-    },
-    {
-      value: 20,
-      question:
-        "Según Moisés 5:9, ¿qué voz divina escuchó Adán después de su bautismo?",
-      answers: [
-        "La voz del Padre",
-        "La voz del Hijo",
-        "La voz del Espíritu Santo",
-        "La voz de Miguel",
-      ],
-      correct: 2, // "Voz del Hijo" (Moisés 5:9)
-    },
-    {
-      value: 20,
-      question:
-        "¿Qué detalle añade Moisés 4:6 sobre la tentación de Eva que no está en Génesis?",
-      answers: [
-        "Satanás citó las Escrituras",
-        "Eva vio el fruto en sueños",
-        "La serpiente tenía alas",
-        "Hubo un terremoto",
-      ],
-      correct: 0, // Satanás citó escrituras (Moisés 4:6)
-    },
-    {
-      value: 20,
-      question:
-        "¿Qué pueblo pre-diluviano es descrito como 'hombres de renown' en Moisés 8:21?",
-      answers: [
-        "Los hijos de Elam",
-        "Los gigantes de Canaan",
-        "Los hijos de Dios",
-        "Los descendientes de Caín",
-      ],
-      correct: 3, // "Hijos de Dios" (Moisés 8:21)
-    },
-
-    {
-      value: 20,
-      question:
-        "¿Qué jeroglífico del Facsímil 2 representa a Dios sentado en su trono?",
-      answers: ["Figura 1", "Figura 3", "Figura 7", "Figura 9"],
-      correct: 0, // Figura 1 (Facsímil 2, explicación)
-    },
-    {
-      value: 20,
-      question:
-        "Según Abraham 3:23, ¿qué término describe a los espíritus nobles en la vida preterrenal?",
-      answers: [
-        "Los valientes",
-        "Los escogidos",
-        "Los inteligentes",
-        "Los nobles y grandes",
-      ],
-      correct: 1, // "Nobles y grandes" (Abraham 3:23)
-    },
-    {
-      value: 20,
-      question:
-        "¿Qué principio astronómico revela Abraham 3:5 sobre los planetas?",
-      answers: [
-        "Giran en espiral",
-        "Su tiempo es relativo",
-        "Emiten sonidos",
-        "Tienen órbitas elípticas",
-      ],
-      correct: 2, // Tiempo relativo (Abraham 3:5-9)
-    },
-    {
-      value: 20,
-      question:
-        "¿Qué facción egipcia adoraba al dios representado en la Figura 6 del Facsímil 1?",
-      answers: [
-        "Sacerdotes de Tebas",
-        "Sacerdotes de Elkenah",
-        "Sacerdotes de Menfis",
-        "Sacerdotes de On",
-      ],
-      correct: 3, // Sacerdotes de Elkenah (Abraham 1:6-7)
-    },
-
-    {
-      value: 20,
-      question:
-        "Según José Smith-Mateo 1:36, ¿qué comparación usa Jesús para describir a los elegidos en los últimos días?",
-      answers: [
-        "Como estrellas en el cielo",
-        "Como trigo en el granero",
-        "Como luz en tinieblas",
-        "Como águilas que vuelan",
-      ],
-      correct: 0, // "Trigo en el granero" (JS-Mateo 1:36)
-    },
-    {
-      value: 20,
-      question:
-        "¿Qué evento específico de la restauración ocurrió el 22 de septiembre de 1827 según JS-Historia?",
-      answers: [
-        "La Primera Visión",
-        "La entrega de las planchas",
-        "La organización de la Iglesia",
-        "El bautismo de Oliver Cowdery",
-      ],
-      correct: 1, // Entrega de las planchas (JS-Historia 1:59)
-    },
-    {
-      value: 20,
-      question:
-        "¿Qué frase clave dijo el ángel Moroni durante su primera visita que viene de Malaquías 4?",
-      answers: [
-        "El sol de justicia surgirá",
-        "Volveré el corazón de los padres",
-        "El día grande y terrible viene",
-        "Os enviaré a Elías",
-      ],
-      correct: 2, // "El día grande y terrible" (JS-Historia 1:36-39)
-    },
-    {
-      value: 20,
-      question:
-        "Según JS-Historia, ¿qué dos personajes bíblicos aparecieron en el Templo de Kirtland en 1836?",
-      answers: [
-        "Moises y Elías",
-        "Pedro y Pablo",
-        "Elías el Profeta y Elías el Tisbita",
-        "Juan el Bautista y Enoc",
-      ],
-      correct: 3, // Elías el Profeta y Elías el Tisbita (D&C 110)
-    },
-
-    // nivel 30
-
-    {
-      value: 30,
-      question: "¿Cuántos facsímiles hay?",
-      answers: ["3", "2", "4", "5"],
-      correct: 0,
-    },
-    {
-      value: 30,
-      question: "¿Qué contiene José Smith-Mateo?",
-      answers: ["Profecías", "Historia", "Doctrina", "Parábolas"],
-      correct: 0,
-    },
-    {
-      value: 30,
-      question: "¿Quién es el autor de los Artículos de Fe?",
-      answers: ["José Smith", "Oliver Cowdery", "Brigham Young", "John Taylor"],
-      correct: 0,
-    },
-
-    {
-      value: 30,
-      question:
-        "¿Qué término del Facsímil 3 fue modificado en la edición de 1842 para corregir un error de traducción?",
-      answers: [
-        "Shulem (por 'siervo')",
-        "Olimlah (por 'rey')",
-        "Zipzi (por 'princesa')",
-        "Faraón (por 'hombre de rey')",
-      ],
-      correct: 3, // "Faraón" corregido a "hombre de rey" (Abraham 1:20 nota)
-    },
-    {
-      value: 30,
-      question:
-        "¿Qué frase en Abraham 5:13 muestra hebraísmo que no existe en Génesis 2:23?",
-      answers: [
-        "'Hueso de mis huesos' en arameo",
-        "'Esta será llamada Mujer' en constructo",
-        "'Varón y hembra los creó' con artículo definido",
-        "'Por tanto el hombre dejará' en tiempo imperfecto",
-      ],
-      correct: 1, // Constructo hebreo en "llamada Mujer" (gramática única)
-    },
-
-    // nivel 40
-
-    {
-      value: 40,
-      question:
-        "Según análisis de egiptólogos modernos, ¿qué jeroglífico del Facsímil 1 fue malinterpretado en la explicación de José Smith pero coincide con un concepto teológico egipcio real?",
-      answers: [
-        "Figura 1 (Dios sentado)",
-        "Figura 3 (Hombre postrado)",
-        "Figura 5 (Ave canópica)",
-        "Figura 9 (Serpiente alada)",
-      ],
-      correct: 2, // Figura 5 (Horus como símbolo de resurrección, aunque no es "ángel")
-    },
-    {
-      value: 40,
-      question:
-        "Según análisis de egiptólogos modernos, ¿qué jeroglífico del Facsímil 1 fue malinterpretado en la explicación de José Smith pero coincide con un concepto teológico egipcio real?",
-      answers: [
-        "Figura 1 (Dios sentado)",
-        "Figura 3 (Hombre postrado)",
-        "Figura 5 (Ave canópica)",
-        "Figura 9 (Serpiente alada)",
-      ],
-      correct: 2, // Figura 5 (Horus como símbolo de resurrección, aunque no es "ángel")
-    },
-
-    {
-      value: 40,
-      question:
-        "En Moisés 6:64, ¿qué elemento del bautismo de Adán NO tiene paralelo en las ordenanzas modernas pero refleja conocimiento del hebreo antiguo?",
-      answers: [
-        "La imposición de manos en silencio",
-        "El canto del Espíritu",
-        "El aceite de oliva consagrado",
-        "El río de agua viva",
-      ],
-      correct: 1, // "Canto del Espíritu" (término hebreo "ruaj" implica vibración/sonido)
-    },
-    {
-      value: 40,
-      question:
-        "¿Qué término en Abraham 1:2 coincide con un título de la literatura ugarítica (1400 a.C.) para «padre de los fieles»?",
-      answers: [
-        "«Príncipe de Paz»",
-        "«Poseedor de los Cielos»",
-        "«Gran Sacerdote»",
-        "«Rey de Caldea»",
-      ],
-      correct: 1, // "Poseedor de los Cielos" (ug. «ʾil mlk» = dios poseedor)
-    },
-    {
-      value: 40,
-      question:
-        "En el Facsímil 2, ¿qué símbolo egipcio (Fig. 7) tiene un significado astronómico real que coincide con la explicación de José Smith sobre Kolob?",
-      answers: [
-        "El disco solar alado",
-        "El ojo de Horus",
-        "El pilar Djed",
-        "La estrella Sirio",
-      ],
-      correct: 0, // Disco solar = concepto de estrella regente (como Kolob)
-    },
-    {
-      value: 40,
-      question:
-        "¿Qué frase en la versión manuscrita de JS-Historia 1:33 fue suavizada en publicaciones posteriores para evitar controversias?",
-      answers: [
-        "«Ninguna de las sectas era verdadera»",
-        "«Todos sus credos eran abominación»",
-        "«Los ministros eran corruptos»",
-        "«El Diablo me atacó»",
-      ],
-      correct: 1, // "Abominación" → "corrupción" en ediciones posteriores
-    },
-    {
-      value: 40,
-      question:
-        "Según Moisés 8:2, ¿qué evento único en la cronología de Enoc precede inmediatamente al nacimiento de Noé?",
-      answers: [
-        "La ordenación de Matusalén como sumo sacerdote",
-        "La traducción de la ciudad de Enoc",
-        "La predicación de Metúsala en Ardis",
-        "El pacto de Dios con Lamec",
-      ],
-      correct: 2, // Predicación de Metúsala (detalle exclusivo de Moisés)
-    },
-    {
-      value: 40,
-      question:
-        "¿Qué construcción gramatical en Abraham 3:18 revela un hebraísmo imposible de traducir literalmente al español?",
-      answers: [
-        "«Estos dos hechos existen» (dual hebreo)",
-        "«Si puedes contar...» (condicional arcaico)",
-        "«Grande será tu nombre» (pasivo divino)",
-        "«Te mostraré estas cosas» (perfecto profético)",
-      ],
-      correct: 0, // Dual hebreo en "estos dos" (referencia a estrellas/planetas)
-    },
-    {
-      value: 40,
-      question:
-        "¿Qué término de Abraham 1:14 ha sido encontrado en papiros egipcios del período ptolemaico como nombre real?",
-      answers: ["«Olimlah»", "«Shulem»", "«Korash»", "«Zepho»"],
-      correct: 3, // "Zepho" (eg. «Djehuty» = nombre de escribas)
-    },
-    {
-      value: 40,
-      question:
-        "¿Qué concepto de Moisés 1:39 tiene un paralelo exacto en los textos de Qumrán (4QInstruction) pero no en la Biblia?",
-      answers: [
-        "«Esta es mi obra y mi gloria»",
-        "«Todos los hombres son semejantes a Dios»",
-        "«El hombre fue creado en el principio a imagen de Dios»",
-        "«Moisés fue hecho dios ante Faraón»",
-      ],
-      correct: 0, // "Obra y gloria" = paralelo en 4Q416 (rol divino en exaltación)
-    },
-    {
-      value: 40,
-      question:
-        "Según el sistema numeral en Abraham 3:4-9, ¿qué relación matemática describe la jerarquía entre Kolob y la Tierra?",
-      answers: [
-        "1 día = 1,000 años terrestres",
-        "1 revolución = 365.25 días terrestres",
-        "1 hora = 7 días terrestres",
-        "1 año = 10,000 años terrestres",
-      ],
-      correct: 0, // Tiempo de Kolob: 1 día = 1,000 años terrestres (v. 4)
-    },
-    {
-      value: 40,
-      question:
-        "¿Qué nombre propio en Moisés 8:8 aparece en textos apócrifos etíopes (Libro de Enoc) pero fue eliminado de la Biblia?",
-      answers: ["Rikayon", "Gaidad", "Barakel", "Tirhanah"],
-      correct: 2, // "Barakel" (Enoc 6:7 como vigía angelical)
-    },
-
-    // nivel 50
-
-    {
-      value: 50,
-      question:
-        "¿Qué nombre recibe el río que fluía del Edén según Moisés 3:10-14 y que NO aparece en el relato bíblico de Génesis?",
-      answers: ["Río de Lemuel", "Río de Vida", "Río de Dios", "Río de Adam"],
-      correct: 3, // "Río de Adam" (Moisés 3:15)
-    },
-    {
-      value: 50,
-      question:
-        "Según Moisés 5:9, ¿qué voz escuchó Adán después de ofrecer sacrificios?",
-      answers: [
-        "La voz del Padre",
-        "La voz del Hijo",
-        "La voz del Espíritu Santo",
-        "La voz de Miguel",
-      ],
-      correct: 1, // "Voz del Hijo" (Moisés 5:9)
-    },
-    {
-      value: 50,
-      question:
-        "¿Qué ciudad fue trasladada al cielo por su justicia en Moisés 7:21?",
-      answers: ["Nueva Jerusalén", "Sión", "Enoc", "Salem"],
-      correct: 2, // "Sión" (Moisés 7:21)
-    },
-
-    {
-      value: 50,
-      question: "¿Qué título recibe Abraham en Egipto según Abraham 1:26?",
-      answers: [
-        "Príncipe de Heliópolis",
-        "Profeta del Faraón",
-        "Sacerdote del Sol",
-        "Gobernador de Menfis",
-      ],
-      correct: 0, // "Príncipe de Heliópolis" (Abraham Facsímile 3)
-    },
-    {
-      value: 50,
-      question:
-        "Según Abraham 3:3, ¿qué astro es el más cercano al trono de Dios?",
-      answers: ["Shinehah", "Kolob", "Olea", "Kokob"],
-      correct: 1, // "Kolob" (Abraham 3:3)
-    },
-    {
-      value: 50,
-      question: "¿Qué facción intentó sacrificar a Abraham según Abraham 1:7?",
-      answers: [
-        "Sacerdotes de Faraón",
-        "Sacerdotes de Elkenah",
-        "Sacerdotes de On",
-        "Sacerdotes de Menfis",
-      ],
-      correct: 2, // "Sacerdotes de Elkenah" (Abraham 1:7)
-    },
-
-    {
-      value: 50,
-      question:
-        "Según José Smith-Mateo 1:27, ¿qué señal precede inmediatamente a la Segunda Venida?",
-      answers: [
-        "El sol se oscurecerá",
-        "Aparecerá la abominación desoladora",
-        "El evangelio será predicado en todo el mundo",
-        "Los muertos resucitarán",
-      ],
-      correct: 0, // "Sol oscurecido" (JS-Mateo 1:27)
-    },
-    {
-      value: 50,
-      question:
-        "¿Qué parábola de Jesús solo aparece en José Smith-Mateo y no en los evangelios bíblicos?",
-      answers: [
-        "Parábola del trigo y la cizaña",
-        "Parábola de las diez vírgenes",
-        "Parábola del siervo malvado",
-        "Parábola del hijo pródigo",
-      ],
-      correct: 1, // "Trigo y cizaña" (JS-Mateo 1:41, versión expandida)
-    },
-
-    {
-      value: 50,
-      question:
-        "¿Qué edad tenía José Smith cuando recibió la Primera Visión según JS-Historia 1:7?",
-      answers: ["14 años", "15 años", "16 años", "17 años"],
-      correct: 0, // "14 años" (JS-Historia 1:7)
-    },
-    {
-      value: 50,
-      question:
-        "Según JS-Historia 1:59, ¿en qué fecha recibió José Smith las planchas de oro?",
-      answers: [
-        "21 de septiembre de 1823",
-        "22 de septiembre de 1827",
-        "6 de abril de 1830",
-        "1 de enero de 1828",
-      ],
-      correct: 1, // "22 de septiembre de 1827" (JS-Historia 1:59)
-    },
-    {
-      value: 50,
-      question:
-        "¿Quién fue el primer escriba de José Smith durante la traducción del Libro de Mormón?",
-      answers: [
-        "Oliver Cowdery",
-        "Emma Smith",
-        "Martin Harris",
-        "David Whitmer",
-      ],
-      correct: 2, // "Martin Harris" (JS-Historia 1:66)
-    },
-
-    {
-      value: 50,
-      question:
-        "Según el Artículo de Fe 7, ¿qué dones espirituales se mencionan específicamente?",
-      answers: [
-        "Hablar en lenguas y profecía",
-        "Sanidades y milagros",
-        "Fe, conocimiento y revelación",
-        "Todos los dones mencionados en 1 Corintios 12",
-      ],
-      correct: 3, // "Todos los dones" (Artículo de Fe 7)
-    },
-    // nivel 60
-
-    {
-      value: 60,
-      question:
-        "Según Moisés 6:64, ¿qué elemento específico del bautismo de Adán NO se menciona en los relatos bíblicos pero es crucial en la teología restaurada?",
-      answers: [
-        "La imposición de manos para el Espíritu Santo",
-        "La oración consagratoria del ángel",
-        "El canto del Espíritu que descendió",
-        "La aparición del Padre y el Hijo",
-      ],
-      correct: 2, // "Canto del Espíritu" (Moisés 6:64)
-    },
-
-    {
-      value: 60,
-      question:
-        "En Abraham 3:16, ¿qué término describe la relación jerárquica entre las inteligencias, que solo aparece en este pasaje?",
-      answers: [
-        "«Una sobre otra»",
-        "«Mayor que todas»",
-        "«Gobernante y súbdito»",
-        "«Primera y última»",
-      ],
-      correct: 0, // "Una sobre otra" (estructura única de Abraham 3:16)
-    },
-
-    {
-      value: 60,
-      question:
-        "Según José Smith-Mateo 1:32, ¿qué evento específico ocurrirá «inmediatamente después» de la tribulación de aquellos días?",
-      answers: [
-        "La caída de Babilonia",
-        "El oscurecimiento del sol",
-        "La aparición de los dos testigos",
-        "La abominación desoladora",
-      ],
-      correct: 1, // "Oscurecimiento del sol" (JS-Mateo 1:33)
-    },
-    {
-      value: 60,
-      question:
-        "¿Qué frase exacta dijo Moroni durante su primera visita, citando Malaquías 3:23-24 en JS-Historia 1:36?",
-      answers: [
-        "«El sol de justicia surgirá»",
-        "«El día grande y terrible viene»",
-        "«El corazón de los padres se volverá»",
-        "«El sacerdocio será restaurado»",
-      ],
-      correct: 1, // "El día grande y terrible viene" (JS-Historia 1:36)
-    },
-
-    {
-      value: 60,
-      question:
-        "En Moisés 1:39, ¿qué frase define la obra y gloria de Dios de manera única en las escrituras?",
-      answers: [
-        "«Llevar a cabo la inmortalidad»",
-        "«Realizar la salvación de los muertos»",
-        "«Llevar a cabo la inmortalidad y la vida eterna del hombre»",
-        "«Glorificar a los obedientes»",
-      ],
-      correct: 2, // "Inmortalidad y vida eterna del hombre" (Moisés 1:39)
-    },
-    {
-      value: 60,
-      question:
-        "Según Abraham 3:13, ¿qué término describe el cálculo del tiempo de Kolob en relación con la Tierra?",
-      answers: [
-        "«Según la manera del Señor»",
-        "«Un día como mil años»",
-        "«Tiempo medido por revoluciones»",
-        "«Tiempo solo conocido por Dios»",
-      ],
-      correct: 0, // "Según la manera del Señor" (Abraham 3:13)
-    },
-    {
-      value: 60,
-      question:
-        "En Moisés 8:2, ¿qué evento único precede inmediatamente al nacimiento de Noé?",
-      answers: [
-        "La predicación de Matusalén",
-        "La ordenación de Lamec",
-        "La muerte de Adán",
-        "La traducción de Enoc",
-      ],
-      correct: 0, // "Predicación de Matusalén" (Moisés 8:2-3)
-    },
-    {
-      value: 60,
-      question:
-        "Según Abraham 1:2, ¿qué derecho específico buscó Abraham que solo se menciona aquí?",
-      answers: [
-        "El derecho a las bendiciones patriarcales",
-        "El derecho a ser un padre de naciones",
-        "El derecho a ser un poseedor de los cielos",
-        "El derecho a ofrecer sacrificios",
-      ],
-      correct: 3, // "Derecho a ofrecer sacrificios" (Abraham 1:2-4)
-    },
-    {
-      value: 60,
-      question:
-        "En José Smith-Mateo 1:37, ¿qué detalle añadido a la parábola del trigo y la cizaña no está en Mateo 13?",
-      answers: [
-        "Los ángeles lloran por los malvados",
-        "Los justos brillan como la luna",
-        "Los hijos del reino son quemados",
-        "El campo es el mundo entero",
-      ],
-      correct: 1, // "Brillan como la luna" (JS-Mateo 1:37)
-    },
-    {
-      value: 60,
-      question:
-        "Según Moisés 5:10-11, ¿qué nombre específico da Adán a Eva que revela su rol en la Caída?",
-      answers: [
-        "Madre de los vivientes",
-        "Mujer de la sabiduría",
-        "Madre de todas las naciones",
-        "Ayuda idónea",
-      ],
-      correct: 0, // "Madre de los vivientes" (Moisés 5:11)
-    },
-    {
-      value: 60,
-      question:
-        "En la explicación del Facsímil 2, ¿qué figura representa «Dios sentado en su trono» según Abraham?",
-      answers: ["Figura 1", "Figura 3", "Figura 5", "Figura 7"],
-      correct: 0, // Figura 1 (explicación del Facsímil 2)
-    },
-    {
-      value: 60,
-      question:
-        "Según JS-Historia 1:72, ¿qué autoridad específica fue conferida por Juan el Bautista?",
-      answers: [
-        "El Sacerdocio de Melquisedec",
-        "Las llaves del ministerio angélico",
-        "El Sacerdocio Aarónico",
-        "El poder de sellamiento",
-      ],
-      correct: 2, // "Sacerdocio Aarónico" (JS-Historia 1:72)
-    },
-  ]
-};
-
-// Art and Culture category questions
 export const arteCulturaQuestions = {
     name: 'Arte y Cultura',
     questionBank: [
+        // Nivel 10 (15 preguntas)
         { value: 10, question: '¿Quién pintó la Mona Lisa?', answers: ['Leonardo da Vinci', 'Miguel Ángel', 'Rafael', 'Botticelli'], correct: 0 },
         { value: 10, question: '¿En qué país nació Pablo Picasso?', answers: ['Francia', 'España', 'Italia', 'Portugal'], correct: 1 },
         { value: 10, question: '¿Qué instrumento tocaba Mozart?', answers: ['Violín', 'Piano', 'Ambos', 'Flauta'], correct: 2 },
+        { value: 10, question: '¿Cuál es la capital de la moda?', answers: ['Londres', 'Nueva York', 'Roma', 'París'], correct: 3 },
+        { value: 10, question: '¿Quién escribió "Romeo y Julieta"?', answers: ['William Shakespeare', 'Charles Dickens', 'Oscar Wilde', 'Jane Austen'], correct: 0 },
+        { value: 10, question: '¿De qué país es originario el sushi?', answers: ['China', 'Japón', 'Corea', 'Tailandia'], correct: 1 },
+        { value: 10, question: '¿Cuál es el baile típico de España?', answers: ['Tango', 'Salsa', 'Flamenco', 'Bachata'], correct: 2 },
+        { value: 10, question: '¿Quién compuso "La Novena Sinfonía"?', answers: ['Mozart', 'Bach', 'Vivaldi', 'Beethoven'], correct: 3 },
+        { value: 10, question: '¿Quién pintó "La última cena"?', answers: ['Leonardo da Vinci', 'Rafael', 'Miguel Ángel', 'Botticelli'], correct: 0 },
+        { value: 10, question: '¿De qué país es la paella?', answers: ['Italia', 'España', 'Portugal', 'Francia'], correct: 1 },
+        { value: 10, question: '¿Qué instrumento toca un pianista?', answers: ['Violín', 'Guitarra', 'Piano', 'Flauta'], correct: 2 },
+        { value: 10, question: '¿Cuál es el arte marcial japonés más conocido?', answers: ['Kung Fu', 'Muay Thai', 'Capoeira', 'Karate'], correct: 3 },
+        { value: 10, question: '¿Quién escribió "El Principito"?', answers: ['Antoine de Saint-Exupéry', 'Jules Verne', 'Victor Hugo', 'Albert Camus'], correct: 0 },
+        { value: 10, question: '¿De qué país es originario el tequila?', answers: ['España', 'México', 'Argentina', 'Chile'], correct: 1 },
+        { value: 10, question: '¿Qué tipo de pintura es "La noche estrellada"?', answers: ['Realismo', 'Surrealismo', 'Post-impresionismo', 'Cubismo'], correct: 2 },
+
+        // Nivel 20 (15 preguntas)
         { value: 20, question: '¿Quién escribió "Don Quijote de la Mancha"?', answers: ['Miguel de Cervantes', 'Lope de Vega', 'García Lorca', 'Quevedo'], correct: 0 },
         { value: 20, question: '¿Qué famoso pintor se cortó una oreja?', answers: ['Monet', 'Van Gogh', 'Gauguin', 'Renoir'], correct: 1 },
-        { value: 20, question: '¿En qué siglo se construyó la Torre Eiffel?', answers: ['XVIII', 'XIX', 'XX', 'XVII'], correct: 1 },
-        { value: 30, question: '¿Quién pintó "La noche estrellada"?', answers: ['Van Gogh', 'Monet', 'Dalí', 'Picasso'], correct: 0 },
-        { value: 30, question: '¿Cuál es el arte japonés de doblar papel?', answers: ['Origami', 'Ikebana', 'Bonsái', 'Manga'], correct: 0 },
-        { value: 30, question: '¿De qué país es originario el tango?', answers: ['Uruguay', 'Argentina', 'Brasil', 'Chile'], correct: 1 },
+        { value: 20, question: '¿En qué ciudad está la Torre Eiffel?', answers: ['Londres', 'Roma', 'París', 'Madrid'], correct: 2 },
+        { value: 20, question: '¿Cuál es el plato nacional de Italia?', answers: ['Paella', 'Sushi', 'Tacos', 'Pizza'], correct: 3 },
+        { value: 20, question: '¿Quién pintó "El nacimiento de Venus"?', answers: ['Botticelli', 'Da Vinci', 'Rafael', 'Miguel Ángel'], correct: 0 },
+        { value: 20, question: '¿De qué país es el vals?', answers: ['Francia', 'Austria', 'Italia', 'Alemania'], correct: 1 },
+        { value: 20, question: '¿Qué famoso arquitecto diseñó la Casa Batlló?', answers: ['Le Corbusier', 'Wright', 'Gaudí', 'Foster'], correct: 2 },
+        { value: 20, question: '¿Cuál es el teatro de ópera más famoso de Italia?', answers: ['Covent Garden', 'Metropolitan', 'Bolshoi', 'La Scala'], correct: 3 },
+        { value: 20, question: '¿Quién escribió "Cien años de soledad"?', answers: ['Gabriel García Márquez', 'Mario Vargas Llosa', 'Pablo Neruda', 'Octavio Paz'], correct: 0 },
+        { value: 20, question: '¿En qué museo está "Las Meninas"?', answers: ['Louvre', 'Prado', 'Uffizi', 'Metropolitan'], correct: 1 },
+        { value: 20, question: '¿Qué instrumento tocaba Paganini?', answers: ['Piano', 'Flauta', 'Violín', 'Cello'], correct: 2 },
+        { value: 20, question: '¿Cuál es la danza nacional de Argentina?', answers: ['Salsa', 'Samba', 'Cumbia', 'Tango'], correct: 3 },
+        { value: 20, question: '¿Quién pintó "El Guernica"?', answers: ['Picasso', 'Dalí', 'Miró', 'Goya'], correct: 0 },
+        { value: 20, question: '¿De qué país es originario el origami?', answers: ['China', 'Japón', 'Corea', 'Vietnam'], correct: 1 },
+        { value: 20, question: '¿Qué estilo arquitectónico caracteriza a Notre Dame?', answers: ['Barroco', 'Románico', 'Gótico', 'Renacentista'], correct: 2 },
+
+        // Nivel 30 (15 preguntas)
+        { value: 30, question: '¿Quién pintó "La persistencia de la memoria"?', answers: ['Salvador Dalí', 'Pablo Picasso', 'Joan Miró', 'René Magritte'], correct: 0 },
+        { value: 30, question: '¿En qué siglo se construyó el Taj Mahal?', answers: ['XV', 'XVII', 'XVI', 'XVIII'], correct: 1 },
+        { value: 30, question: '¿Qué compositor es conocido como "El Rey del Vals"?', answers: ['Mozart', 'Bach', 'Johann Strauss II', 'Beethoven'], correct: 2 },
+        { value: 30, question: '¿Cuál es la obra más famosa de Andy Warhol?', answers: ['Campbell\'s Soup', 'Marilyn Monroe', 'Elvis Presley', 'Latas de Coca-Cola'], correct: 3 },
+        { value: 30, question: '¿Quién escribió "La Divina Comedia"?', answers: ['Dante Alighieri', 'Petrarca', 'Boccaccio', 'Maquiavelo'], correct: 0 },
+        { value: 30, question: '¿En qué museo se encuentra "La Victoria de Samotracia"?', answers: ['British Museum', 'Louvre', 'Vaticano', 'Pérgamo'], correct: 1 },
+        { value: 30, question: '¿Qué arquitecto diseñó la Ópera de Sídney?', answers: ['Le Corbusier', 'Frank Lloyd Wright', 'Jørn Utzon', 'Frank Gehry'], correct: 2 },
+        { value: 30, question: '¿Cuál es el instrumento nacional de Escocia?', answers: ['Violín', 'Arpa', 'Flauta', 'Gaita'], correct: 3 },
+        { value: 30, question: '¿Quién escribió "El Quijote"?', answers: ['Miguel de Cervantes', 'Lope de Vega', 'Calderón de la Barca', 'Francisco de Quevedo'], correct: 0 },
+        { value: 30, question: '¿En qué ciudad está "La Última Cena" de Da Vinci?', answers: ['Roma', 'Milán', 'Florencia', 'Venecia'], correct: 1 },
+        { value: 30, question: '¿Qué famoso pintor lideró el movimiento surrealista?', answers: ['Picasso', 'Van Gogh', 'Salvador Dalí', 'Monet'], correct: 2 },
+        { value: 30, question: '¿Cuál es el baile tradicional de Hawái?', answers: ['Samba', 'Tango', 'Salsa', 'Hula'], correct: 3 },
+        { value: 30, question: '¿Quién compuso "El lago de los cisnes"?', answers: ['Tchaikovsky', 'Mozart', 'Bach', 'Beethoven'], correct: 0 },
+        { value: 30, question: '¿En qué país se originó el arte del bonsái?', answers: ['Corea', 'China', 'Vietnam', 'Japón'], correct: 1 },
+        { value: 30, question: '¿Qué estilo musical nació en Nueva Orleans?', answers: ['Rock', 'Blues', 'Jazz', 'Country'], correct: 2 },
+
+        // Nivel 40 (15 preguntas)
         { value: 40, question: '¿Quién compuso "Las cuatro estaciones"?', answers: ['Vivaldi', 'Bach', 'Mozart', 'Beethoven'], correct: 0 },
-        { value: 40, question: '¿En qué museo está "La Gioconda"?', answers: ['Louvre', 'Prado', 'Uffizi', 'British Museum'], correct: 0 },
-        { value: 40, question: '¿Qué arquitecto diseñó la Sagrada Familia?', answers: ['Gaudí', 'Le Corbusier', 'Wright', 'Mies van der Rohe'], correct: 0 },
-        { value: 50, question: '¿Quién escribió "Cien años de soledad"?', answers: ['García Márquez', 'Vargas Llosa', 'Borges', 'Neruda'], correct: 0 },
-        { value: 50, question: '¿Cuál es el baile típico de Brasil?', answers: ['Tango', 'Samba', 'Salsa', 'Merengue'], correct: 1 },
-        { value: 50, question: '¿De qué país es el mariachi?', answers: ['España', 'Colombia', 'México', 'Argentina'], correct: 2 },
-        { value: 60, question: '¿Quién pintó "El grito"?', answers: ['Munch', 'Klimt', 'Kandinsky', 'Magritte'], correct: 0 },
-        { value: 60, question: '¿Qué arquitecto diseñó el Guggenheim de Bilbao?', answers: ['Frank Gehry', 'Zaha Hadid', 'Norman Foster', 'Renzo Piano'], correct: 0 },
-        { value: 60, question: '¿En qué período artístico se pintó la Capilla Sixtina?', answers: ['Renacimiento', 'Barroco', 'Gótico', 'Románico'], correct: 0 }
+        { value: 40, question: '¿Qué arquitecto diseñó la Casa de la Cascada?', answers: ['Le Corbusier', 'Frank Lloyd Wright', 'Mies van der Rohe', 'Walter Gropius'], correct: 1 },
+        { value: 40, question: '¿En qué movimiento artístico se destaca Wassily Kandinsky?', answers: ['Impresionismo', 'Surrealismo', 'Abstracto', 'Cubismo'], correct: 2 },
+        { value: 40, question: '¿Cuál es la ópera más famosa de Puccini?', answers: ['Carmen', 'Aida', 'Don Giovanni', 'Madama Butterfly'], correct: 3 },
+        { value: 40, question: '¿Quién escribió "Ulises"?', answers: ['James Joyce', 'Virginia Woolf', 'Ernest Hemingway', 'F. Scott Fitzgerald'], correct: 0 },
+        { value: 40, question: '¿En qué museo está "La Libertad guiando al pueblo"?', answers: ['Metropolitan', 'Louvre', 'Orsay', 'National Gallery'], correct: 1 },
+        { value: 40, question: '¿Qué instrumento era el favorito de Bach?', answers: ['Piano', 'Violín', 'Órgano', 'Clavecín'], correct: 2 },
+        { value: 40, question: '¿Cuál es el ballet más famoso de Tchaikovsky?', answers: ['Giselle', 'Don Quijote', 'La Bayadère', 'El Cascanueces'], correct: 3 },
+        { value: 40, question: '¿Quién pintó "Los girasoles"?', answers: ['Van Gogh', 'Monet', 'Renoir', 'Degas'], correct: 0 },
+        { value: 40, question: '¿En qué ciudad está la Capilla Sixtina?', answers: ['Florencia', 'Ciudad del Vaticano', 'Venecia', 'Milán'], correct: 1 },
+        { value: 40, question: '¿Qué estilo arquitectónico caracteriza al Partenón?', answers: ['Romano', 'Bizantino', 'Griego clásico', 'Helenístico'], correct: 2 },
+        { value: 40, question: '¿Cuál es la danza tradicional de Brasil?', answers: ['Tango', 'Salsa', 'Merengue', 'Samba'], correct: 3 },
+        { value: 40, question: '¿Quién escribió "El retrato de Dorian Gray"?', answers: ['Oscar Wilde', 'Edgar Allan Poe', 'Charles Dickens', 'Mark Twain'], correct: 0 },
+        { value: 40, question: '¿Qué famoso pintor fundó el cubismo?', answers: ['Dalí', 'Picasso', 'Miró', 'Gris'], correct: 1 },
+        { value: 40, question: '¿Qué instrumento destacó en el jazz de Miles Davis?', answers: ['Saxofón', 'Piano', 'Trompeta', 'Batería'], correct: 2 },
+
+        // Nivel 50 (15 preguntas)
+        { value: 50, question: '¿Quién pintó "Las señoritas de Avignon"?', answers: ['Picasso', 'Matisse', 'Braque', 'Cézanne'], correct: 0 },
+        { value: 50, question: '¿En qué siglo se desarrolló el Renacimiento italiano?', answers: ['XIV', 'XV', 'XVI', 'XVII'], correct: 1 },
+        { value: 50, question: '¿Qué compositor creó "La consagración de la primavera"?', answers: ['Debussy', 'Ravel', 'Stravinsky', 'Prokofiev'], correct: 2 },
+        { value: 50, question: '¿Cuál es la escultura más famosa de Miguel Ángel?', answers: ['Venus de Milo', 'El Pensador', 'Victoria de Samotracia', 'David'], correct: 3 },
+        { value: 50, question: '¿Quién escribió "En busca del tiempo perdido"?', answers: ['Marcel Proust', 'André Gide', 'Albert Camus', 'Jean-Paul Sartre'], correct: 0 },
+        { value: 50, question: '¿Qué artista es conocido como el "padre del pop art"?', answers: ['Dalí', 'Warhol', 'Lichtenstein', 'Rothko'], correct: 1 },
+        { value: 50, question: '¿Qué estilo musical creó John Cage?', answers: ['Minimalismo', 'Serialismo', 'Música aleatoria', 'Dodecafonismo'], correct: 2 },
+        { value: 50, question: '¿Cuál es la obra más famosa de Vermeer?', answers: ['El Grito', 'La Ronda Nocturna', 'Las Meninas', 'La Joven de la Perla'], correct: 3 },
+        { value: 50, question: '¿Quién diseñó la Biblioteca Nacional de Francia?', answers: ['Dominique Perrault', 'Rem Koolhaas', 'Norman Foster', 'Zaha Hadid'], correct: 0 },
+        { value: 50, question: '¿En qué período se pintaron las cuevas de Altamira?', answers: ['Neolítico', 'Paleolítico', 'Edad del Bronce', 'Edad del Hierro'], correct: 1 },
+        { value: 50, question: '¿Qué instrumento revolucionó Stradivari?', answers: ['Piano', 'Viola', 'Violín', 'Cello'], correct: 2 },
+        { value: 50, question: '¿Cuál es el teatro más antiguo de Italia?', answers: ['La Fenice', 'San Carlo', 'La Scala', 'Teatro Olimpico'], correct: 3 },
+        { value: 50, question: '¿Quién pintó "El jardín de las delicias"?', answers: ['El Bosco', 'Durero', 'Bruegel', 'Van Eyck'], correct: 0 },
+        { value: 50, question: '¿Qué arquitecto diseñó el Centro Pompidou?', answers: ['Foster', 'Piano', 'Gehry', 'Le Corbusier'], correct: 1 },
+        { value: 50, question: '¿Qué movimiento artístico fundó Marinetti?', answers: ['Dadaísmo', 'Surrealismo', 'Futurismo', 'Expresionismo'], correct: 2 },
+
+        // Nivel 60 (15 preguntas)
+        { value: 60, question: '¿Quién compuso "Arte de la Fuga"?', answers: ['Bach', 'Händel', 'Vivaldi', 'Telemann'], correct: 0 },
+        { value: 60, question: '¿Qué arquitecto diseñó la Villa Savoye?', answers: ['Wright', 'Le Corbusier', 'Mies', 'Gropius'], correct: 1 },
+        { value: 60, question: '¿En qué técnica se especializó Rembrandt?', answers: ['Fresco', 'Óleo', 'Claroscuro', 'Temple'], correct: 2 },
+        { value: 60, question: '¿Cuál es la sinfonía más larga de Mahler?', answers: ['Primera', 'Quinta', 'Séptima', 'Tercera'], correct: 3 },
+        { value: 60, question: '¿Quién escribió "Finnegans Wake"?', answers: ['James Joyce', 'Samuel Beckett', 'W.B. Yeats', 'George Bernard Shaw'], correct: 0 },
+        { value: 60, question: '¿Qué artista creó "La fuente" (1917)?', answers: ['Picasso', 'Duchamp', 'Brancusi', 'Man Ray'], correct: 1 },
+        { value: 60, question: '¿Qué estilo arquitectónico caracteriza a Gaudí?', answers: ['Barroco', 'Gótico', 'Modernismo', 'Art Déco'], correct: 2 },
+        { value: 60, question: '¿Cuál es la obra maestra de Wagner?', answers: ['Fidelio', 'Don Giovanni', 'Tosca', 'El anillo del nibelungo'], correct: 3 },
+        { value: 60, question: '¿Quién pintó "Las majas"?', answers: ['Goya', 'Velázquez', 'El Greco', 'Murillo'], correct: 0 },
+        { value: 60, question: '¿En qué movimiento se inscribe Mondrian?', answers: ['Cubismo', 'Neoplasticismo', 'Suprematismo', 'Constructivismo'], correct: 1 },
+        { value: 60, question: '¿Qué escuela de diseño fundó Walter Gropius?', answers: ['Vkhutemas', 'De Stijl', 'Bauhaus', 'Glasgow School'], correct: 2 },
+        { value: 60, question: '¿Cuál es el manuscrito medieval más famoso?', answers: ['Codex Gigas', 'Libro de Durrow', 'Beato de Liébana', 'Libro de Kells'], correct: 3 },
+        { value: 60, question: '¿Quién esculpió "El pensador"?', answers: ['Rodin', 'Brancusi', 'Moore', 'Giacometti'], correct: 0 },
+        { value: 60, question: '¿Qué pintor lideró el expresionismo abstracto?', answers: ['Rothko', 'Pollock', 'De Kooning', 'Still'], correct: 1 },
+        { value: 60, question: '¿Qué compositor revolucionó la música serial?', answers: ['Berg', 'Webern', 'Schönberg', 'Stockhausen'], correct: 2 }
     ]
 };
