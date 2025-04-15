@@ -14,33 +14,45 @@ const gameData = {
         {
             name: 'Historia',
             questions: [
-                { value: 100, question: '¿En qué año se descubrió América?', answers: ['1492', '1498', '1500', '1489'], correct: 0 },
-                { value: 200, question: '¿Quién fue el primer presidente de México?', answers: ['Guadalupe Victoria', 'Benito Juárez', 'Miguel Hidalgo', 'Agustín de Iturbide'], correct: 0 },
-                { value: 300, question: '¿En qué año comenzó la Revolución Mexicana?', answers: ['1910', '1920', '1900', '1915'], correct: 0 }
+                { value: 10, question: '¿En qué año se descubrió América?', answers: ['1492', '1498', '1500', '1489'], correct: 0 },
+                { value: 20, question: '¿Quién fue el primer presidente de México?', answers: ['Guadalupe Victoria', 'Benito Juárez', 'Miguel Hidalgo', 'Agustín de Iturbide'], correct: 0 },
+                { value: 30, question: '¿En qué año comenzó la Revolución Mexicana?', answers: ['1910', '1920', '1900', '1915'], correct: 0 },
+                { value: 40, question: '¿Qué tratado puso fin a la Revolución Mexicana?', answers: ['Tratados de Córdoba', 'Plan de Iguala', 'Tratados de Teoloyucan', 'Plan de Ayala'], correct: 0 },
+                { value: 50, question: '¿En qué año se promulgó la Constitución Mexicana?', answers: ['1917', '1910', '1921', '1915'], correct: 0 },
+                { value: 60, question: '¿Quién fue el último emperador de México?', answers: ['Maximiliano de Habsburgo', 'Agustín de Iturbide', 'Antonio López de Santa Anna', 'Porfirio Díaz'], correct: 0 }
             ]
         },
         {
             name: 'Geografía',
             questions: [
-                { value: 100, question: '¿Cuál es el río más largo del mundo?', answers: ['Amazonas', 'Nilo', 'Misisipi', 'Yangtsé'], correct: 0 },
-                { value: 200, question: '¿Cuál es el país más grande del mundo?', answers: ['Rusia', 'China', 'Estados Unidos', 'Canadá'], correct: 0 },
-                { value: 300, question: '¿Cuál es la capital de Australia?', answers: ['Canberra', 'Sídney', 'Melbourne', 'Brisbane'], correct: 0 }
+                { value: 10, question: '¿Cuál es el río más largo del mundo?', answers: ['Amazonas', 'Nilo', 'Misisipi', 'Yangtsé'], correct: 0 },
+                { value: 20, question: '¿Cuál es el país más grande del mundo?', answers: ['Rusia', 'China', 'Estados Unidos', 'Canadá'], correct: 0 },
+                { value: 30, question: '¿Cuál es la capital de Australia?', answers: ['Canberra', 'Sídney', 'Melbourne', 'Brisbane'], correct: 0 },
+                { value: 40, question: '¿Cuál es el desierto más grande del mundo?', answers: ['Sahara', 'Gobi', 'Atacama', 'Antártida'], correct: 0 },
+                { value: 50, question: '¿Cuál es la montaña más alta del mundo?', answers: ['Monte Everest', 'K2', 'Kangchenjunga', 'Lhotse'], correct: 0 },
+                { value: 60, question: '¿Cuál es el océano más profundo?', answers: ['Pacífico', 'Atlántico', 'Índico', 'Ártico'], correct: 0 }
             ]
         },
         {
             name: 'Ciencia',
             questions: [
-                { value: 100, question: '¿Cuál es el elemento químico más abundante en el universo?', answers: ['Hidrógeno', 'Helio', 'Oxígeno', 'Carbono'], correct: 0 },
-                { value: 200, question: '¿Cuál es la velocidad de la luz?', answers: ['299,792 km/s', '199,792 km/s', '399,792 km/s', '499,792 km/s'], correct: 0 },
-                { value: 300, question: '¿Qué planeta es conocido como el planeta rojo?', answers: ['Marte', 'Venus', 'Júpiter', 'Mercurio'], correct: 0 }
+                { value: 10, question: '¿Cuál es el elemento químico más abundante en el universo?', answers: ['Hidrógeno', 'Helio', 'Oxígeno', 'Carbono'], correct: 0 },
+                { value: 20, question: '¿Cuál es la velocidad de la luz?', answers: ['299,792 km/s', '199,792 km/s', '399,792 km/s', '499,792 km/s'], correct: 0 },
+                { value: 30, question: '¿Qué planeta es conocido como el planeta rojo?', answers: ['Marte', 'Venus', 'Júpiter', 'Mercurio'], correct: 0 },
+                { value: 40, question: '¿Cuál es la unidad más pequeña de la materia?', answers: ['Átomo', 'Molécula', 'Célula', 'Protón'], correct: 0 },
+                { value: 50, question: '¿Qué científico propuso la teoría de la relatividad?', answers: ['Albert Einstein', 'Isaac Newton', 'Stephen Hawking', 'Niels Bohr'], correct: 0 },
+                { value: 60, question: '¿Cuál es el proceso por el cual las plantas producen su alimento?', answers: ['Fotosíntesis', 'Respiración', 'Digestión', 'Fermentación'], correct: 0 }
             ]
         },
         {
             name: 'Arte',
             questions: [
-                { value: 100, question: '¿Quién pintó la Mona Lisa?', answers: ['Leonardo da Vinci', 'Miguel Ángel', 'Rafael', 'Botticelli'], correct: 0 },
-                { value: 200, question: '¿En qué país nació Pablo Picasso?', answers: ['España', 'Francia', 'Italia', 'Portugal'], correct: 0 },
-                { value: 300, question: '¿Quién pintó "La noche estrellada"?', answers: ['Vincent van Gogh', 'Claude Monet', 'Salvador Dalí', 'Pablo Picasso'], correct: 0 }
+                { value: 10, question: '¿Quién pintó la Mona Lisa?', answers: ['Leonardo da Vinci', 'Miguel Ángel', 'Rafael', 'Botticelli'], correct: 0 },
+                { value: 20, question: '¿En qué país nació Pablo Picasso?', answers: ['España', 'Francia', 'Italia', 'Portugal'], correct: 0 },
+                { value: 30, question: '¿Quién pintó "La noche estrellada"?', answers: ['Vincent van Gogh', 'Claude Monet', 'Salvador Dalí', 'Pablo Picasso'], correct: 0 },
+                { value: 40, question: '¿Qué famoso artista cortó su propia oreja?', answers: ['Vincent van Gogh', 'Pablo Picasso', 'Salvador Dalí', 'Claude Monet'], correct: 0 },
+                { value: 50, question: '¿Quién esculpió el David?', answers: ['Miguel Ángel', 'Leonardo da Vinci', 'Donatello', 'Rafael'], correct: 0 },
+                { value: 60, question: '¿En qué siglo se desarrolló el Renacimiento?', answers: ['Siglo XV', 'Siglo XIV', 'Siglo XVI', 'Siglo XVII'], correct: 0 }
             ]
         }
     ]
