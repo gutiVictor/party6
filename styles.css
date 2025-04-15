@@ -139,6 +139,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -346,6 +427,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -449,6 +611,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -552,6 +795,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -655,6 +979,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -758,6 +1163,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -861,6 +1347,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -964,6 +1531,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1067,6 +1715,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1170,6 +1899,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1273,6 +2083,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1376,6 +2267,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1479,6 +2451,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1582,6 +2635,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1685,6 +2819,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1788,6 +3003,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1891,6 +3187,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -1994,6 +3371,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -2097,6 +3555,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -2200,6 +3739,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -2303,6 +3923,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -2406,6 +4107,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -2509,6 +4291,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {
@@ -2612,6 +4475,87 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin-top: 20px;
+    padding: 0 15px;
+}
+
+.category-dropdown {
+    display: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.category-dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 103, 255, 0.8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .category-dropdown {
+        display: block;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .category {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .question-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .score-display {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .controls {
+        top: 10px;
+        right: 10px;
+    }
+
+    .control-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .config-button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-board {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .category {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .question-card {
+        padding: 12px;
+        font-size: 12px;
+    }
 }
 
 .category {

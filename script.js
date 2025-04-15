@@ -125,6 +125,13 @@ function createGameBoard() {
             `).join('')}
         </div>
         <div class="total-questions">Preguntas respondidas: ${gameState.questionsAnswered}/${gameState.totalQuestions}</div>
+        <div class="category-dropdown">
+            <select id="categorySelect">
+                ${gameData.categories.map((category, index) => `
+                    <option value="${index}">${category.name}</option>
+                `).join('')}
+            </select>
+        </div>
         <div class="game-board">
     `;
 
@@ -157,6 +164,20 @@ function createGameBoard() {
             card.style.visibility = 'hidden';
         });
     });
+
+    // Add event listener for category dropdown
+    const categorySelect = document.getElementById('categorySelect');
+    if (categorySelect) {
+        categorySelect.addEventListener('change', () => {
+            const selectedCategory = parseInt(categorySelect.value);
+            document.querySelectorAll('.question-card').forEach(card => {
+                const cardCategory = parseInt(card.dataset.category);
+                card.style.display = (cardCategory === selectedCategory || window.innerWidth > 768) ? 'block' : 'none';
+            });
+        });
+        // Trigger initial filter
+        categorySelect.dispatchEvent(new Event('change'));
+    }
 }
 
 // Show question
