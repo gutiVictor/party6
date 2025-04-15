@@ -79,9 +79,12 @@ function showConfig() {
             <h2>Configuración del Juego</h2>
             <div class="player-select">
                 <h3>Número de Equipos</h3>
+                <button class="config-button" data-teams="1">1 Equipo</button>
                 <button class="config-button" data-teams="2">2 Equipos</button>
                 <button class="config-button" data-teams="3">3 Equipos</button>
                 <button class="config-button" data-teams="4">4 Equipos</button>
+                <button class="config-button" data-teams="5">5 Equipos</button>
+                <button class="config-button" data-teams="6">6 Equipos</button>
             </div>
             <button class="start-button">Comenzar</button>
         </div>
