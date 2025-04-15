@@ -721,3 +721,28 @@ export const perlaQuestions = {
     },
   ]
 };
+
+// Art and Culture category questions
+export const arteCulturaQuestions = {
+    name: 'Arte y Cultura',
+    questionBank: [
+        { value: 10, question: '¿Quién pintó la Mona Lisa?', answers: ['Leonardo da Vinci', 'Miguel Ángel', 'Rafael', 'Botticelli'], correct: 0 },
+        { value: 10, question: '¿En qué país nació Pablo Picasso?', answers: ['Francia', 'España', 'Italia', 'Portugal'], correct: 1 },
+        { value: 10, question: '¿Qué instrumento tocaba Mozart?', answers: ['Violín', 'Piano', 'Ambos', 'Flauta'], correct: 2 },
+        { value: 20, question: '¿Quién escribió "Don Quijote de la Mancha"?', answers: ['Miguel de Cervantes', 'Lope de Vega', 'García Lorca', 'Quevedo'], correct: 0 },
+        { value: 20, question: '¿Qué famoso pintor se cortó una oreja?', answers: ['Monet', 'Van Gogh', 'Gauguin', 'Renoir'], correct: 1 },
+        { value: 20, question: '¿En qué siglo se construyó la Torre Eiffel?', answers: ['XVIII', 'XIX', 'XX', 'XVII'], correct: 1 },
+        { value: 30, question: '¿Quién pintó "La noche estrellada"?', answers: ['Van Gogh', 'Monet', 'Dalí', 'Picasso'], correct: 0 },
+        { value: 30, question: '¿Cuál es el arte japonés de doblar papel?', answers: ['Origami', 'Ikebana', 'Bonsái', 'Manga'], correct: 0 },
+        { value: 30, question: '¿De qué país es originario el tango?', answers: ['Uruguay', 'Argentina', 'Brasil', 'Chile'], correct: 1 },
+        { value: 40, question: '¿Quién compuso "Las cuatro estaciones"?', answers: ['Vivaldi', 'Bach', 'Mozart', 'Beethoven'], correct: 0 },
+        { value: 40, question: '¿En qué museo está "La Gioconda"?', answers: ['Louvre', 'Prado', 'Uffizi', 'British Museum'], correct: 0 },
+        { value: 40, question: '¿Qué arquitecto diseñó la Sagrada Familia?', answers: ['Gaudí', 'Le Corbusier', 'Wright', 'Mies van der Rohe'], correct: 0 },
+        { value: 50, question: '¿Quién escribió "Cien años de soledad"?', answers: ['García Márquez', 'Vargas Llosa', 'Borges', 'Neruda'], correct: 0 },
+        { value: 50, question: '¿Cuál es el baile típico de Brasil?', answers: ['Tango', 'Samba', 'Salsa', 'Merengue'], correct: 1 },
+        { value: 50, question: '¿De qué país es el mariachi?', answers: ['España', 'Colombia', 'México', 'Argentina'], correct: 2 },
+        { value: 60, question: '¿Quién pintó "El grito"?', answers: ['Munch', 'Klimt', 'Kandinsky', 'Magritte'], correct: 0 },
+        { value: 60, question: '¿Qué arquitecto diseñó el Guggenheim de Bilbao?', answers: ['Frank Gehry', 'Zaha Hadid', 'Norman Foster', 'Renzo Piano'], correct: 0 },
+        { value: 60, question: '¿En qué período artístico se pintó la Capilla Sixtina?', answers: ['Renacimiento', 'Barroco', 'Gótico', 'Románico'], correct: 0 }
+    ]
+};

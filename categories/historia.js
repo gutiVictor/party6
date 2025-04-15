@@ -1,6 +1,8 @@
-// Bible category questions
-export const bibliaQuestions = {
-    name: 'Biblia',
+
+
+// History category questions
+export const historiaQuestions = {
+    name: 'Historia',
     questionBank: [
         
             { value: 10, question: '¿Cuál es el primer libro de la Biblia?', answers: ['Éxodo', 'Génesis', 'Levítico', 'Números'], correct: 1 },
@@ -75,6 +77,5 @@ export const bibliaQuestions = {
             { value: 60, question: '¿Quién fue el fariseo que defendió a Jesús ante el Sanedrín?', answers: ['Nicodemo ', 'Gamaliel', 'Saulo', 'José de Arimatea'], correct: 0 },
             { value: 60, question: '¿Cuántas cartas generales hay en el Nuevo Testamento?', answers: ['7', '9', '10', '8'], correct: 3 },
             { value: 60, question: '¿Quién escribió la carta de Judas?', answers: ['Pablo', 'Judas ', 'Juan', 'Pedro'], correct: 1 }
-          ]
+    ]
 };
-

@@ -10,18 +10,18 @@ let gameState = {
 };
 
 // Import category modules
-import { bibliaQuestions } from './categories/biblia.js';
-import { libroDemormonQuestions } from './categories/librodemormon.js';
-import { perlaQuestions } from './categories/perla.js';
-import { dcQuestions } from './categories/dc.js';
+import { historiaQuestions } from './categories/historia.js';
+import { cienciaNaturalezaQuestions } from './categories/ciencia-y-naturaleza.js';
+import { arteCulturaQuestions } from './categories/arte-y-cultura.js';
+import { geografiaQuestions } from './categories/geografia.js';
 
 // Game data with imported categories
 const gameData = {
     categories: [
-        bibliaQuestions,
-        libroDemormonQuestions,
-        perlaQuestions,
-        dcQuestions
+        historiaQuestions,
+        cienciaNaturalezaQuestions,
+        arteCulturaQuestions,
+        geografiaQuestions
     ]
 };
 
@@ -39,7 +39,7 @@ function initGame() {
     const container = document.querySelector('.game-container');
     container.innerHTML = `
         <div class="start-screen fade-in">
-            <h1 class="logo">¡Party Sud!</h1>
+            <h1 class="logo">¡Party para todos!</h1>
             <button class="start-button">Comenzar Juego</button>
         </div>
     `;
