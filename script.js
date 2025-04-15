@@ -163,6 +163,7 @@ function createGameBoard() {
 function showQuestion(categoryIndex, value) {
     const question = gameState.selectedQuestions[categoryIndex][value];
     gameState.currentQuestion = question;
+    const currentTeam = gameState.teams[gameState.questionsAnswered % gameState.teams.length];
 
     const modal = document.createElement('div');
     modal.className = 'question-modal fade-in';
@@ -170,7 +171,8 @@ function showQuestion(categoryIndex, value) {
         <div class="question-content">
             <div class="question-header">
                 <div class="question-value">Valor: $${question.value}</div>
-                <div class="current-score">Puntaje Actual: $${gameState.scores[gameState.teams[gameState.questionsAnswered % gameState.teams.length]]}</div>
+                <div class="current-team">Equipo Actual: ${currentTeam}</div>
+                <div class="current-score">Puntaje Actual: $${gameState.scores[currentTeam]}</div>
             </div>
             <div class="question-text">
                 <h3>${question.question}</h3>
