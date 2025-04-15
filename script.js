@@ -12,7 +12,7 @@ let gameState = {
 const gameData = {
     categories: [
         {
-            name: 'Historia',
+            name: 'Biblia',
             questions: [
                 { value: 10, question: '¿En qué año se descubrió América?', answers: ['1492', '1498', '1500', '1489'], correct: 0 },
                 { value: 20, question: '¿Quién fue el primer presidente de México?', answers: ['Guadalupe Victoria', 'Benito Juárez', 'Miguel Hidalgo', 'Agustín de Iturbide'], correct: 0 },
@@ -23,7 +23,7 @@ const gameData = {
             ]
         },
         {
-            name: 'Geografía',
+            name: 'Libro de Mormón',
             questions: [
                 { value: 10, question: '¿Cuál es el río más largo del mundo?', answers: ['Amazonas', 'Nilo', 'Misisipi', 'Yangtsé'], correct: 0 },
                 { value: 20, question: '¿Cuál es el país más grande del mundo?', answers: ['Rusia', 'China', 'Estados Unidos', 'Canadá'], correct: 0 },
@@ -34,7 +34,7 @@ const gameData = {
             ]
         },
         {
-            name: 'Ciencia',
+            name: 'Perla',
             questions: [
                 { value: 10, question: '¿Cuál es el elemento químico más abundante en el universo?', answers: ['Hidrógeno', 'Helio', 'Oxígeno', 'Carbono'], correct: 0 },
                 { value: 20, question: '¿Cuál es la velocidad de la luz?', answers: ['299,792 km/s', '199,792 km/s', '399,792 km/s', '499,792 km/s'], correct: 0 },
@@ -45,7 +45,7 @@ const gameData = {
             ]
         },
         {
-            name: 'Arte',
+            name: 'D & C',
             questions: [
                 { value: 10, question: '¿Quién pintó la Mona Lisa?', answers: ['Leonardo da Vinci', 'Miguel Ángel', 'Rafael', 'Botticelli'], correct: 0 },
                 { value: 20, question: '¿En qué país nació Pablo Picasso?', answers: ['España', 'Francia', 'Italia', 'Portugal'], correct: 0 },
@@ -63,7 +63,7 @@ function initGame() {
     const container = document.querySelector('.game-container');
     container.innerHTML = `
         <div class="start-screen fade-in">
-            <h1 class="logo">¡Jeoparty!</h1>
+            <h1 class="logo">¡Party Sud!</h1>
             <button class="start-button">Comenzar Juego</button>
         </div>
     `;
@@ -148,6 +148,7 @@ function createGameBoard() {
         card.addEventListener('click', () => {
             const categoryIndex = Math.floor(index % gameData.categories.length);
             const value = parseInt(card.dataset.value);
+            const category = gameData.categories[categoryIndex];
             const questionIndex = category.questions.findIndex(q => q.value === value);
             showQuestion(categoryIndex, questionIndex);
             card.style.visibility = 'hidden';
@@ -164,8 +165,13 @@ function showQuestion(categoryIndex, questionIndex) {
     modal.className = 'question-modal fade-in';
     modal.innerHTML = `
         <div class="question-content">
-            <h2>$${question.value}</h2>
-            <p>${question.question}</p>
+            <div class="question-header">
+                <div class="question-value">Valor: $${question.value}</div>
+                <div class="current-score">Puntaje Actual: $${gameState.scores[gameState.teams[gameState.questionsAnswered % gameState.teams.length]]}</div>
+            </div>
+            <div class="question-text">
+                <h3>${question.question}</h3>
+            </div>
             <form class="answer-form">
                 ${question.answers.map((answer, index) => `
                     <div class="answer-option">
