@@ -127,9 +127,11 @@ function createGameBoard() {
         boardHTML += `<div class="category">${category.name}</div>`;
     });
 
-    // Add questions
-    gameData.categories.forEach(category => {
-        category.questions.forEach(question => {
+    // Add questions in ascending order by value
+    const questionValues = [10, 20, 30, 40, 50, 60];
+    questionValues.forEach(value => {
+        gameData.categories.forEach(category => {
+            const question = category.questions.find(q => q.value === value);
             boardHTML += `
                 <div class="question-card" data-value="${question.value}">
                     $${question.value}
@@ -144,8 +146,9 @@ function createGameBoard() {
     // Add event listeners to question cards
     document.querySelectorAll('.question-card').forEach((card, index) => {
         card.addEventListener('click', () => {
-            const categoryIndex = Math.floor(index / 3);
-            const questionIndex = index % 3;
+            const categoryIndex = Math.floor(index % gameData.categories.length);
+            const value = parseInt(card.dataset.value);
+            const questionIndex = category.questions.findIndex(q => q.value === value);
             showQuestion(categoryIndex, questionIndex);
             card.style.visibility = 'hidden';
         });
