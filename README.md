@@ -1,17 +1,24 @@
-# ¡Party Sud!
+# Party Para Todos
 
 ## Desarrollador
 Victor Raul Gutierrez - Desarrollador Web Full Stack y Tecnólogo en Análisis y Desarrollo de Software
 
 ## Descripción
-Party Sud es un juego de preguntas y respuestas inspirado en el formato de Jeopardy, diseñado específicamente para aprender y divertirse con temas relacionados con la Iglesia SUD.
+Party Para Todos es un juego de preguntas y respuestas inspirado en el formato de Jeopardy, diseñado para aprender y divertirse con temas de conocimiento general.
+
+## Categorías
+- Historia
+- Ciencia y Naturaleza
+- Arte y Cultura
+- Geografía
 
 ## Características
-- Múltiples categorías de preguntas (Biblia, Libro de Mormón, Perla de Gran Precio, D&C)
+- 4 categorías de conocimiento general
 - Soporte para 1-6 equipos
 - Sistema de puntuación dinámico
 - Interfaz intuitiva y atractiva
-- Preguntas con diferentes niveles de dificultad y valor
+- Preguntas con diferentes niveles de dificultad (10-60 puntos)
+- Diseño responsivo para diferentes dispositivos
 
 ## Instalación
 1. Descarga los archivos del juego
@@ -27,7 +34,7 @@ Party Sud es un juego de preguntas y respuestas inspirado en el formato de Jeopa
 
 ## Configuración
 - Selecciona entre 1 a 6 equipos
-- Cada pregunta tiene un valor diferente según su dificultad
+- Preguntas con valores de 10 a 60 puntos
 - Las preguntas respondidas se marcan automáticamente
 - El juego termina cuando todas las preguntas han sido respondidas
 
@@ -45,6 +52,7 @@ Si deseas contribuir al proyecto, puedes:
 1. Reportar errores
 2. Sugerir nuevas características
 3. Proponer nuevas preguntas y categorías
+4. Mejorar la interfaz de usuario
 
 ## Licencia
-Este proyecto está disponible para uso libre en actividades educativas y religiosas.
+Este proyecto está disponible para uso libre en actividades educativas y de entretenimiento.
