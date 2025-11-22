@@ -1,636 +1,963 @@
-/* Game Container Styles */
-.game-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    color: white;
-}
-
-/* Start Screen Styles */
-.start-screen {
-    text-align: center;
-    padding: 50px 20px;
-}
+/* ===============================================
+   PARTY PARA TODOS - OPTIMIZED STYLES
+   Design System: Modern, Premium, Responsive
+   =============================================== */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap');
 
-/* Global Styles */
-body {
+/* ===============================================
+   CSS VARIABLES - DESIGN TOKENS
+   =============================================== */
+:root {
+    /* Colors - Elegant Professional Palette */
+    --primary-dark: #0a0e27;
+    --primary-mid: #1a1f3a;
+    --primary-light: #2a3052;
+    --accent-gold: #c9a961;
+    --accent-silver: #8a9ba8;
+    --accent-navy: #2c3e5d;
+    --accent-charcoal: #3d4451;
+
+    /* Semantic Colors */
+    --success: #5a8f7b;
+    --success-glow: rgba(90, 143, 123, 0.3);
+    --error: #a84448;
+    --error-glow: rgba(168, 68, 72, 0.3);
+    --warning: #b8860b;
+
+    /* Gradients - Elegant & Sophisticated */
+    --gradient-primary: linear-gradient(135deg, #2c3e5d 0%, #3d4451 100%);
+    --gradient-accent: linear-gradient(45deg, #2a3052, #c9a961);
+    --gradient-success: linear-gradient(135deg, #5a8f7b 0%, #4a7a68 100%);
+    --gradient-error: linear-gradient(135deg, #a84448 0%, #8b3538 100%);
+    --gradient-bg: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a3052 100%);
+
+    /* Glass Effect */
+    --glass-bg: rgba(201, 169, 97, 0.08);
+    --glass-border: rgba(201, 169, 97, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+
+    /* Spacing */
+    --space-xs: 5px;
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 30px;
+    --space-xl: 40px;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 15px;
+    --radius-xl: 20px;
+    --radius-pill: 50px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 15px rgba(201, 169, 97, 0.2);
+    --shadow-lg: 0 8px 25px rgba(201, 169, 97, 0.3);
+    --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.4);
+
+    /* Typography */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ===============================================
+   GLOBAL RESET & BASE STYLES
+   =============================================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--gradient-bg);
+    background-attachment: fixed;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    font-family: 'Montserrat', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated background effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(44, 62, 93, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
+    animation: bgShift 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes bgShift {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* ===============================================
+   UTILITY CLASSES
+   =============================================== */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-slow) ease-in;
+}
+
+.fade-out {
+    animation: fadeOut var(--transition-normal) ease-out;
+}
+
+/* ===============================================
+   GAME CONTAINER
+   =============================================== */
+.game-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================================
+   START SCREEN
+   =============================================== */
+.start-screen {
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 900;
     color: #fff;
-    text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
+    text-shadow:
+        0 0 20px var(--accent-gold),
+        0 0 40px rgba(201, 169, 97, 0.5),
+        0 0 60px rgba(201, 169, 97, 0.3),
+        0 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: var(--space-xl);
+    letter-spacing: 3px;
+    animation: pulse-glow 3s ease-in-out infinite;
 }
 
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-    font-weight: bold;
-    grid-column: span 1;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2em;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.2);
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.3);
-    padding: 25px;
-    text-align: center;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.3em;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.1);
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.5);
-    box-shadow: 0 8px 25px rgba(0, 247, 255, 0.2);
-}
-
-.team-score {
-    padding: 15px 30px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.3);
-    font-size: 1.2em;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.1);
-}
-
-.start-button, .config-button {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.2);
-}
-
-.start-button:hover, .config-button:hover {
-    box-shadow: 0 8px 25px rgba(0, 247, 255, 0.3);
-}
-
-.total-questions, .score-display {
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.1);
-}
-
+/* ===============================================
+   BUTTONS
+   =============================================== */
 .start-button {
-    background: linear-gradient(45deg, #0066ff, #238f5d);
+    background: var(--gradient-primary);
     border: none;
-    padding: 15px 40px;
-    font-size: 24px;
+    padding: 18px 50px;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
     color: white;
-    border-radius: 30px;
+    border-radius: var(--radius-pill);
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+.start-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.start-button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .start-button:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Game Configuration Styles */
+.start-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* ===============================================
+   CONFIG SCREEN
+   =============================================== */
 .config-screen {
     text-align: center;
-    padding: 30px;
+    padding: var(--space-lg);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.player-select, .question-select {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 400px;
+.config-screen h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 2px 10px rgba(201, 169, 97, 0.3);
+}
+
+.player-select {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--space-md) auto;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-md);
+}
+
+.player-select h3 {
+    margin-bottom: var(--space-md);
+    color: var(--accent-gold);
+    font-size: 1.3rem;
 }
 
 .config-button {
-    background: #13634b;
+    background: rgba(44, 62, 93, 0.7);
     color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
+    border: 2px solid transparent;
+    padding: 12px 28px;
+    border-radius: var(--radius-xl);
     cursor: pointer;
-    margin: 5px;
+    margin: var(--space-xs);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.config-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(201, 169, 97, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.config-button:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.config-button:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
 }
 
 .config-button.selected {
-    background: #279157;
+    background: var(--gradient-accent);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
+    transform: scale(1.05);
 }
 
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
+/* ===============================================
+   SCORE DISPLAY & COUNTERS
+   =============================================== */
+.score-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-md);
 }
 
+.team-score {
+    padding: 12px 25px;
+    border-radius: var(--radius-md);
+    background: rgba(44, 62, 93, 0.3);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.team-score.active-team {
+    background: var(--gradient-accent);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 25px rgba(201, 169, 97, 0.6);
+    transform: scale(1.08);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.team-score:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+}
+
+/* ===============================================
+   CURRENT TURN BANNER
+   =============================================== */
+.current-turn-banner {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.2) 0%, rgba(44, 62, 93, 0.3) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    border: 2px solid var(--accent-gold);
+    box-shadow:
+        0 8px 25px rgba(201, 169, 97, 0.4),
+        inset 0 0 20px rgba(201, 169, 97, 0.1);
+    animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+.turn-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.turn-label {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-shadow: 0 0 10px rgba(201, 169, 97, 0.5);
+    letter-spacing: 1px;
+}
+
+.turn-team {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-weight: 900;
+    color: #fff;
+    background: var(--gradient-accent);
+    padding: 8px 25px;
+    border-radius: var(--radius-pill);
+    box-shadow:
+        0 4px 15px rgba(201, 169, 97, 0.5),
+        inset 0 2px 10px rgba(255, 255, 255, 0.2);
+    animation: text-glow 2s ease-in-out infinite;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes gentle-pulse {
+
+    0%,
+    100% {
+        border-color: var(--accent-gold);
+        box-shadow:
+            0 8px 25px rgba(201, 169, 97, 0.4),
+            inset 0 0 20px rgba(201, 169, 97, 0.1);
+    }
+
+    50% {
+        border-color: rgba(201, 169, 97, 0.8);
+        box-shadow:
+            0 8px 35px rgba(201, 169, 97, 0.6),
+            inset 0 0 30px rgba(201, 169, 97, 0.2);
+    }
+}
+
+@keyframes text-glow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 10px rgba(201, 169, 97, 0.5),
+            0 0 20px rgba(201, 169, 97, 0.3);
+    }
+
+    50% {
+        text-shadow:
+            0 0 20px rgba(201, 169, 97, 0.8),
+            0 0 30px rgba(201, 169, 97, 0.5),
+            0 0 40px rgba(201, 169, 97, 0.3);
+    }
+}
+
+.total-questions {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px;
+    margin-bottom: var(--space-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===============================================
+   CATEGORY DROPDOWN (Mobile)
+   =============================================== */
 .category-dropdown {
     display: none;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
 }
 
 .category-dropdown select {
     width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
+    padding: 15px;
+    border-radius: var(--radius-md);
+    background: rgba(44, 62, 93, 0.8);
     color: white;
-    border: none;
-    font-size: 16px;
+    border: 2px solid var(--accent-gold);
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all var(--transition-fast);
 }
 
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
+.category-dropdown select:hover {
+    background: rgba(44, 62, 93, 1);
+    box-shadow: var(--shadow-md);
 }
 
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
+/* ===============================================
+   GAME BOARD
+   =============================================== */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: var(--space-md);
+    padding: 0 var(--space-sm);
 }
 
 .category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
+    background: var(--gradient-primary);
+    padding: var(--space-md);
     text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
 }
 
 .question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
+    background: rgba(138, 155, 168, 0.1);
+    backdrop-filter: blur(5px);
+    padding: clamp(1rem, 3vw, 1.8rem);
     text-align: center;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     cursor: pointer;
-    transition: transform 0.2s;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid rgba(201, 169, 97, 0.25);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.question-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.3), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    border-radius: 50%;
+}
+
+.question-card:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
+    transform: translateY(-5px) scale(1.03);
+    background: rgba(201, 169, 97, 0.2);
+    border-color: var(--accent-gold);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
 }
 
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+.question-card:active {
+    transform: translateY(-2px) scale(1.01);
 }
 
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
+.question-card[style*="visibility: hidden"] {
+    opacity: 0.3;
+    pointer-events: none;
 }
 
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-/* Question Modal Styles */
+/* ===============================================
+   QUESTION MODAL
+   =============================================== */
 .question-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    padding: var(--space-md);
 }
 
 .question-content {
-    background: rgba(0, 103, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 600px;
-    width: 90%;
+    background: linear-gradient(135deg, rgba(44, 62, 93, 0.95) 0%, rgba(61, 68, 81, 0.95) 100%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    max-width: 700px;
+    width: 100%;
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--glass-border);
+    animation: modalSlideIn 0.4s ease-out;
 }
 
 .question-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.question-value, .current-score {
-    font-size: 1.2em;
-    color: #00ffff;
-    font-weight: bold;
+.question-value,
+.current-team,
+.current-score {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-shadow: 0 2px 10px rgba(201, 169, 97, 0.5);
+}
+
+.timer-container {
+    width: 100%;
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: var(--space-xs);
+    text-shadow: 0 0 10px var(--accent-gold);
+}
+
+.timer-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+}
+
+.timer-bar {
+    height: 100%;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-pill);
+    transition: width 1s linear;
+    box-shadow: 0 0 10px var(--accent-gold);
 }
 
 .question-text {
-    margin-bottom: 25px;
+    margin-bottom: var(--space-lg);
     text-align: center;
+    padding: var(--space-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
 }
 
 .question-text h3 {
     color: white;
-    font-size: 1.4em;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.4;
     margin: 0;
 }
 
 .answer-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: var(--space-md);
 }
 
 .answer-option {
-    background: rgba(0, 247, 255, 0.1);
-    padding: 12px;
-    border-radius: 8px;
+    background: rgba(138, 155, 168, 0.1);
+    padding: 15px 20px;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-option::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--accent-gold);
+    transform: scaleY(0);
+    transition: transform var(--transition-fast);
+}
+
+.answer-option:hover::before {
+    transform: scaleY(1);
 }
 
 .answer-option:hover {
-    background: rgba(0, 247, 255, 0.2);
+    background: rgba(201, 169, 97, 0.15);
+    border-color: var(--accent-gold);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
 }
 
 .answer-option input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent-gold);
 }
 
 .answer-option label {
     color: white;
     cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Answer Feedback States */
+.answer-option.correct-answer {
+    background: var(--gradient-success);
+    border-color: var(--success);
+    animation: successPulse 0.6s ease;
+}
+
+.answer-option.wrong-answer {
+    background: var(--gradient-error);
+    border-color: var(--error);
+    animation: shake 0.5s ease;
 }
 
 .submit-answer {
-    background: #00ffff;
+    background: var(--gradient-accent);
     color: #000;
+    font-weight: 700;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 15px;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: transform 0.2s;
+    font-size: 1.1rem;
+    margin-top: var(--space-sm);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-md);
+    letter-spacing: 1px;
 }
 
 .submit-answer:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Game Over Screen */
+.submit-answer:active {
+    transform: translateY(0);
+}
+
+.submit-answer:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===============================================
+   GAME OVER SCREEN
+   =============================================== */
 .game-over {
     text-align: center;
-    padding: 50px 20px;
+    padding: var(--space-xl) var(--space-md);
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: var(--space-md);
+    text-shadow: 0 0 20px var(--accent-gold);
+    animation: fadeInScale 0.6s ease-out;
+}
+
+.game-over h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--accent-gold);
+    margin-bottom: var(--space-lg);
+    animation: fadeInScale 0.8s ease-out;
 }
 
 .final-scores {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin: 30px 0;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
     align-items: center;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #0b6969;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
     width: 100%;
-    margin-bottom: 15px;
+    max-width: 500px;
 }
 
-.category-dropdown select {
+.final-scores .team-score {
     width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 18px 30px;
+    animation: slideInRight calc(var(--transition-slow) + 0.2s) ease-out backwards;
 }
 
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
+/* Statistics Display */
+.statistics-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin: var(--space-lg) 0;
+    border: 1px solid var(--glass-border);
+    max-width: 600px;
+    width: 100%;
 }
 
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
+.statistics-panel h3 {
+    color: var(--accent-gold);
+    margin-bottom: var(--space-md);
+    font-size: 1.5rem;
 }
 
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
+.stat-item {
     display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
+.stat-label {
+    font-weight: 600;
 }
 
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
+.stat-value {
+    color: var(--accent-gold);
+    font-weight: 700;
 }
 
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
+/* ===============================================
+   ANIMATIONS
+   =============================================== */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 20px var(--accent-gold),
+            0 0 40px rgba(201, 169, 97, 0.5),
+            0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    50% {
+        text-shadow:
+            0 0 30px var(--accent-gold),
+            0 0 60px rgba(201, 169, 97, 0.7),
+            0 0 80px rgba(201, 169, 97, 0.5),
+            0 5px 15px rgba(0, 0, 0, 0.5);
+    }
 }
 
-.config-button.selected {
-    background: #00ffff;
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
+@keyframes successPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
 }
 
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+/* Tablets and smaller desktops */
+@media screen and (max-width: 1024px) {
+    .game-board {
+        gap: 10px;
+    }
+
+    .question-card {
+        padding: 1.2rem;
+    }
+}
+
+/* Tablets Portrait */
 @media screen and (max-width: 768px) {
     .category-dropdown {
         display: block;
@@ -645,3930 +972,131 @@ body {
         gap: 8px;
     }
 
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
     .score-display {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        align-items: stretch;
     }
 
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
+    .question-content {
+        padding: var(--space-lg);
     }
 
     .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
+
+    .turn-indicator {
+        flex-direction: column;
+        gap: var(--space-sm);
     }
 }
 
+/* Mobile Landscape and smaller */
+@media screen and (max-width: 640px) {
+    .question-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .answer-option {
+        padding: 12px 15px;
+    }
+
+    .answer-option label {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile Portrait */
 @media screen and (max-width: 480px) {
+    :root {
+        --space-md: 15px;
+        --space-lg: 20px;
+        --space-xl: 30px;
+    }
+
+    .game-container {
+        padding: var(--space-sm);
+    }
+
     .game-board {
         grid-template-columns: 1fr;
         gap: 6px;
     }
 
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
     .question-card {
-        padding: 12px;
-        font-size: 12px;
+        padding: 0.8rem;
+        font-size: 1.1rem;
+    }
+
+    .config-button {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+        margin: 3px;
+    }
+
+    .start-button {
+        padding: 15px 40px;
     }
 }
 
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
+/* Extra Small Devices */
+@media screen and (max-width: 320px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    .question-text h3 {
+        font-size: 1.1rem;
+    }
 }
 
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
+/* ===============================================
+   CONFETTI ANIMATION
+   =============================================== */
+.confetti {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    animation: confetti-fall 3s linear forwards;
+    z-index: 9999;
 }
 
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
     }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(0, 247, 255, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
 }
 
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
-
-    .category {
-        font-size: 12px;
-        padding: 8px;
-    }
+/* ===============================================
+   ACCESSIBILITY
+   =============================================== */
+@media (prefers-reduced-motion: reduce) {
 
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
-}
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.question-card:hover {
-    transform: scale(1.05);
-    background: rgba(80, 117, 59, 0.8);
-}
-
-/* Total Questions Counter */
-.total-questions {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-/* Score Display */
-.score-display {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.team-score {
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Controls */
-.controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.control-button {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.config-button {
-    background: #0066ff;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.config-button.selected {
-    background: #00ffff;
-}
-
-/* Game Board Styles */
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 15px;
-}
-
-.category-dropdown {
-    display: none;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-.category-dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(0, 103, 255, 0.8);
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
 }
-
-@media screen and (max-width: 768px) {
-    .category-dropdown {
-        display: block;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .game-board {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .category {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .question-card {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .score-display {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .controls {
-        top: 10px;
-        right: 10px;
-    }
-
-    .control-button {
-        width: 35px;
-        height: 35px;
-    }
 
-    .config-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
+/* Focus states for keyboard navigation */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
 }
-
-@media screen and (max-width: 480px) {
-    .game-board {
-        grid-template-columns: 1fr;
-        gap: 6px;
-    }
 
-    .category {
-        font-size: 12px;
-        padding: 8px;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .glass-effect {
+        background: rgba(0, 0, 0, 0.9);
+        border: 2px solid white;
     }
-
-    .question-card {
-        padding: 12px;
-        font-size: 12px;
-    }
 }
-
-.category {
-    background: rgba(0, 103, 255, 0.8);
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
-    grid-column: span 1;
-}
-
-.question-card {
-    background: rgba(0, 247, 255, 0.6);
-    padding: 20px;
-    text-align: center;
-    border-radius: 1}
