@@ -4,16 +4,16 @@
 let gameState = {
     teams: [],
     scores: {},
-    statistics: {}, // Track performance stats per team
+    statistics: {},
     currentQuestion: null,
     timer: null,
     timerValue: 30,
     questionsAnswered: 0,
     totalQuestions: 0,
     selectedQuestions: {},
-    answeredQuestions: new Set(), // Track answered questions
+    answeredQuestions: new Set(),
     currentTeamIndex: 0,
-    questionStartTime: null // For response time tracking
+    questionStartTime: null
 };
 
 // Import category modules
@@ -36,7 +36,6 @@ const gameData = {
 // INITIALIZE GAME - IMPROVED START SCREEN
 // ===============================================
 function initGame() {
-    // Reset game state
     gameState.teams = [];
     gameState.scores = {};
     gameState.statistics = {};
@@ -52,7 +51,6 @@ function initGame() {
     const container = document.querySelector('.game-container');
     container.innerHTML = `
         <div class="start-screen fade-in">
-            <!-- Floating particles background -->
             <div class="particles">
                 <div class="particle"></div>
                 <div class="particle"></div>
@@ -61,7 +59,6 @@ function initGame() {
                 <div class="particle"></div>
             </div>
             
-            <!-- Main content -->
             <div class="start-content">
                 <div class="logo-section">
                     <div class="logo-icon">🎉</div>
@@ -69,7 +66,6 @@ function initGame() {
                     <p class="subtitle">El juego de trivia más emocionante</p>
                 </div>
                 
-                <!-- Feature cards -->
                 <div class="feature-cards">
                     <div class="feature-card">
                         <div class="feature-icon">⚡</div>
@@ -88,7 +84,6 @@ function initGame() {
                     </div>
                 </div>
                 
-                <!-- CTA Button -->
                 <button class="start-button-enhanced">
                     <span class="button-content">
                         <span class="button-icon">🎮</span>
@@ -98,7 +93,6 @@ function initGame() {
                     <span class="button-glow"></span>
                 </button>
                 
-                <!-- Categories preview -->
                 <div class="categories-preview">
                     <p class="preview-title">Categorías disponibles:</p>
                     <div class="category-pills">
@@ -116,36 +110,100 @@ function initGame() {
 }
 
 // ===============================================
-// CONFIGURATION SCREEN
+// CONFIGURATION SCREEN - ENHANCED WITH 3D CARDS
 // ===============================================
 function showConfig() {
     const container = document.querySelector('.game-container');
     container.innerHTML = `
         <div class="config-screen fade-in">
-            <h2>Configuración del Juego</h2>
-            <div class="player-select">
-                <h3>Número de Equipos</h3>
-                <button class="config-button" data-teams="1">1 Equipo</button>
-                <button class="config-button" data-teams="2">2 Equipos</button>
-                <button class="config-button" data-teams="3">3 Equipos</button>
-                <button class="config-button" data-teams="4">4 Equipos</button>
-                <button class="config-button" data-teams="5">5 Equipos</button>
-                <button class="config-button" data-teams="6">6 Equipos</button>
+            <div class="config-header">
+                <div class="config-icon">⚙️</div>
+                <h2 class="config-title">Configuración del Juego</h2>
+                <p class="config-subtitle">Selecciona el número de equipos que participarán</p>
             </div>
-            <button class="start-button" style="margin-top: 20px;">Comenzar</button>
+            
+            <div class="team-selection-grid">
+                <div class="team-card" data-teams="1">
+                    <div class="team-card-bg"></div>
+                    <div class="team-icon">👤</div>
+                    <div class="team-number">1</div>
+                    <div class="team-label">Equipo</div>
+                    <div class="team-players">1 participante</div>
+                    <div class="card-shine"></div>
+                </div>
+                
+                <div class="team-card" data-teams="2">
+                    <div class="team-card-bg"></div>
+                    <div class="team-icon">👥</div>
+                    <div class="team-number">2</div>
+                    <div class="team-label">Equipos</div>
+                    <div class="team-players">2-4 participantes</div>
+                    <div class="card-shine"></div>
+                </div>
+                
+                <div class="team-card" data-teams="3">
+                    <div class="team-card-bg"></div>
+                    <div class="team-icon">👨‍👩‍👦</div>
+                    <div class="team-number">3</div>
+                    <div class="team-label">Equipos</div>
+                    <div class="team-players">3-6 participantes</div>
+                    <div class="card-shine"></div>
+                </div>
+                
+                <div class="team-card" data-teams="4">
+                    <div class="team-card-bg"></div>
+                    <div class="team-icon">👨‍👩‍👧‍👦</div>
+                    <div class="team-number">4</div>
+                    <div class="team-label">Equipos</div>
+                    <div class="team-players">4-8 participantes</div>
+                    <div class="card-shine"></div>
+                </div>
+                
+                <div class="team-card" data-teams="5">
+                    <div class="team-card-bg"></div>
+                    <div class="team-icon">🎭</div>
+                    <div class="team-number">5</div>
+                    <div class="team-label">Equipos</div>
+                    <div class="team-players">5-10 participantes</div>
+                    <div class="card-shine"></div>
+                </div>
+                
+                <div class="team-card" data-teams="6">
+                    <div class="team-card-bg"></div>
+                    <div class="team-icon">🎪</div>
+                    <div class="team-number">6</div>
+                    <div class="team-label">Equipos</div>
+                    <div class="team-players">6-12 participantes</div>
+                    <div class="card-shine"></div>
+                </div>
+            </div>
+            
+            <button class="start-button-config" disabled>
+                <span class="button-icon-config">🚀</span>
+                <span>Comenzar Juego</span>
+                <span class="button-arrow-config">→</span>
+            </button>
         </div>
     `;
 
-    // Event listeners for team selection
-    document.querySelectorAll('.config-button').forEach(button => {
-        button.addEventListener('click', (e) => {
-            document.querySelectorAll('.config-button').forEach(b => b.classList.remove('selected'));
-            e.target.classList.add('selected');
+    document.querySelectorAll('.team-card').forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+        
+        card.addEventListener('click', (e) => {
+            document.querySelectorAll('.team-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
             
-            const numTeams = parseInt(e.target.dataset.teams);
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple-effect';
+            const rect = card.getBoundingClientRect();
+            ripple.style.left = e.clientX - rect.left + 'px';
+            ripple.style.top = e.clientY - rect.top + 'px';
+            card.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+            
+            const numTeams = parseInt(card.dataset.teams);
             gameState.teams = Array.from({length: numTeams}, (_, i) => `Equipo ${i + 1}`);
             
-            // Initialize scores and statistics
             gameState.teams.forEach(team => {
                 gameState.scores[team] = 0;
                 gameState.statistics[team] = {
@@ -156,10 +214,14 @@ function showConfig() {
                     bestStreak: 0
                 };
             });
+            
+            const startBtn = document.querySelector('.start-button-config');
+            startBtn.disabled = false;
+            startBtn.classList.add('enabled');
         });
     });
 
-    document.querySelector('.start-button').addEventListener('click', () => {
+    document.querySelector('.start-button-config').addEventListener('click', () => {
         if (gameState.teams.length > 0) {
             selectRandomQuestions();
             createGameBoard();
@@ -203,7 +265,6 @@ function selectRandomQuestions() {
 function createGameBoard() {
     const container = document.querySelector('.game-container');
     gameState.totalQuestions = gameData.categories.length * 6;
-
     const currentTeam = gameState.teams[gameState.currentTeamIndex];
     
     let boardHTML = `
@@ -233,12 +294,10 @@ function createGameBoard() {
         <div class="game-board">
     `;
 
-    // Add categories
     gameData.categories.forEach(category => {
         boardHTML += `<div class="category">${category.name}</div>`;
     });
 
-    // Add questions
     const questionValues = [10, 20, 30, 40, 50, 60];
     questionValues.forEach(value => {
         gameData.categories.forEach((_, categoryIndex) => {
@@ -259,7 +318,6 @@ function createGameBoard() {
     boardHTML += '</div>';
     container.innerHTML = boardHTML;
 
-    // Add event listeners to question cards
     document.querySelectorAll('.question-card:not(.answered)').forEach(card => {
         card.addEventListener('click', () => {
             const categoryIndex = parseInt(card.dataset.category);
@@ -268,7 +326,6 @@ function createGameBoard() {
         });
     });
 
-    // Category dropdown for mobile
     const categorySelect = document.getElementById('categorySelect');
     if (categorySelect) {
         categorySelect.addEventListener('change', () => {
@@ -289,7 +346,6 @@ function showQuestion(categoryIndex, value) {
     const question = gameState.selectedQuestions[categoryIndex][value];
     gameState.currentQuestion = question;
     gameState.questionStartTime = Date.now();
-    
     const currentTeam = gameState.teams[gameState.currentTeamIndex];
 
     const modal = document.createElement('div');
@@ -326,11 +382,8 @@ function showQuestion(categoryIndex, value) {
     `;
 
     document.body.appendChild(modal);
-
-    // Start timer
     startQuestionTimer(modal, categoryIndex, value);
 
-    // Form submission
     modal.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
         const selectedAnswerInput = modal.querySelector('input[name="answer"]:checked');
@@ -358,7 +411,6 @@ function startQuestionTimer(modal, categoryIndex, value) {
         timerDisplay.textContent = timeLeft;
         timerBar.style.width = `${(timeLeft / 30) * 100}%`;
         
-        // Change color when time is running out
         if (timeLeft <= 10) {
             timerBar.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
             timerDisplay.style.color = '#ef4444';
@@ -377,7 +429,6 @@ function startQuestionTimer(modal, categoryIndex, value) {
 function autoSubmitAnswer(modal, categoryIndex, value) {
     const selectedAnswerInput = modal.querySelector('input[name="answer"]:checked');
     const selectedAnswer = selectedAnswerInput ? parseInt(selectedAnswerInput.value) : -1;
-    
     handleAnswer(selectedAnswer, modal, categoryIndex, value, true);
 }
 
@@ -388,37 +439,26 @@ function handleAnswer(selectedAnswer, modal, categoryIndex, value, isTimeout = f
     const currentTeam = gameState.teams[gameState.currentTeamIndex];
     const correctAnswer = gameState.currentQuestion.correct;
     const isCorrect = selectedAnswer === correctAnswer;
-    
-    // Calculate response time
     const responseTime = (Date.now() - gameState.questionStartTime) / 1000;
     
-    // Update statistics
     updateStatistics(currentTeam, isCorrect, responseTime);
-    
-    // Show visual feedback
     showAnswerFeedback(modal, selectedAnswer, correctAnswer, isCorrect, isTimeout);
     
-    // Update score
     if (isCorrect) {
         gameState.scores[currentTeam] += gameState.currentQuestion.value;
     }
     
-    // Mark question as answered
     const questionId = `${categoryIndex}-${value}`;
     gameState.answeredQuestions.add(questionId);
     gameState.questionsAnswered++;
-    
-    // Move to next team
     gameState.currentTeamIndex = (gameState.currentTeamIndex + 1) % gameState.teams.length;
     
-    // Close modal and update board after delay
     setTimeout(() => {
         modal.remove();
-        
         if (gameState.questionsAnswered >= gameState.totalQuestions) {
             showGameOver();
         } else {
-            createGameBoard(); // Recreate board to update turn indicator
+            createGameBoard();
         }
     }, 2500);
 }
@@ -430,26 +470,21 @@ function showAnswerFeedback(modal, selectedAnswer, correctAnswer, isCorrect, isT
     const options = modal.querySelectorAll('.answer-option');
     const submitButton = modal.querySelector('.submit-answer');
     
-    // Disable all inputs
     modal.querySelectorAll('input').forEach(input => input.disabled = true);
     submitButton.disabled = true;
     
     if (isTimeout) {
-        // Show timeout message
         const timerDisplay = modal.querySelector('.timer-display');
         timerDisplay.innerHTML = '⏰ ¡Tiempo agotado!';
         timerDisplay.style.color = '#ef4444';
     }
     
-    // Highlight correct answer
     options[correctAnswer].classList.add('correct-answer');
     
     if (!isCorrect && selectedAnswer >= 0) {
-        // Highlight wrong answer if one was selected
         options[selectedAnswer].classList.add('wrong-answer');
     }
     
-    // Show confetti for correct answers
     if (isCorrect) {
         createConfetti();
         const timerDisplay = modal.querySelector('.timer-display');
@@ -477,9 +512,7 @@ function createConfetti() {
             confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
             confetti.style.animationDelay = Math.random() * 0.3 + 's';
             confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-            
             document.body.appendChild(confetti);
-            
             setTimeout(() => confetti.remove(), 3000);
         }, i * 30);
     }
@@ -565,7 +598,6 @@ function showGameOver() {
         </div>
     `;
     
-    // Show victory confetti
     createConfetti();
     setTimeout(() => createConfetti(), 300);
 }
