@@ -33,7 +33,7 @@ const gameData = {
 };
 
 // ===============================================
-// INITIALIZE GAME
+// INITIALIZE GAME - IMPROVED START SCREEN
 // ===============================================
 function initGame() {
     // Reset game state
@@ -52,15 +52,67 @@ function initGame() {
     const container = document.querySelector('.game-container');
     container.innerHTML = `
         <div class="start-screen fade-in">
-            <h1 class="logo">¡Party para todos!</h1>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">
-                🎮 Juego de Preguntas y Respuestas 🎮
-            </p>
-            <button class="start-button">Comenzar Juego</button>
+            <!-- Floating particles background -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            
+            <!-- Main content -->
+            <div class="start-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🎉</div>
+                    <h1 class="logo">¡Party para todos!</h1>
+                    <p class="subtitle">El juego de trivia más emocionante</p>
+                </div>
+                
+                <!-- Feature cards -->
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Rápido y Dinámico</h3>
+                        <p>30 segundos por pregunta</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Modo Competitivo</h3>
+                        <p>Hasta 6 equipos</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Estadísticas</h3>
+                        <p>Tracking completo</p>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <button class="start-button-enhanced">
+                    <span class="button-content">
+                        <span class="button-icon">🎮</span>
+                        <span class="button-text">Comenzar Juego</span>
+                        <span class="button-arrow">→</span>
+                    </span>
+                    <span class="button-glow"></span>
+                </button>
+                
+                <!-- Categories preview -->
+                <div class="categories-preview">
+                    <p class="preview-title">Categorías disponibles:</p>
+                    <div class="category-pills">
+                        <span class="pill">📚 Historia</span>
+                        <span class="pill">🔬 Ciencia</span>
+                        <span class="pill">🎨 Arte</span>
+                        <span class="pill">🌍 Geografía</span>
+                    </div>
+                </div>
+            </div>
         </div>
     `;
 
-    document.querySelector('.start-button').addEventListener('click', showConfig);
+    document.querySelector('.start-button-enhanced').addEventListener('click', showConfig);
 }
 
 // ===============================================
